@@ -615,52 +615,25 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
           {guide.radioChannels && guide.radioChannels.length > 0 && (
             <>
               <SubSection title="Radio Channel Matrix">
-                <div className="rounded-lg overflow-hidden border border-gray-700">
-                  <div className="table-scroll overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="bg-gray-900 text-gray-100">
-                          <th className="px-3 py-2.5 text-left font-semibold text-xs uppercase tracking-wider">Channel</th>
-                          <th className="px-3 py-2.5 text-left font-semibold text-xs uppercase tracking-wider">Assignment</th>
-                          <th className="px-3 py-2.5 text-left font-semibold text-xs uppercase tracking-wider">Notes</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {guide.radioChannels.map((ch, i) => (
-                          <tr key={i} className={`border-t border-gray-700 ${i % 2 === 0 ? 'bg-gray-800' : 'bg-gray-850'} text-gray-200`}>
-                            <td className="px-3 py-2.5 font-mono text-pink font-bold whitespace-nowrap">{ch.channel}</td>
-                            <td className="px-3 py-2.5 font-medium whitespace-nowrap">{ch.assignment}</td>
-                            <td className="px-3 py-2.5 text-gray-400">{ch.notes}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                <DataTable
+                  headers={['Channel', 'Assignment', 'Notes']}
+                  rows={guide.radioChannels.map((ch) => [
+                    <span key={ch.channel} className="font-mono text-pink font-bold">{ch.channel}</span>,
+                    <span key={`${ch.channel}-a`} className="font-medium">{ch.assignment}</span>,
+                    ch.notes,
+                  ])}
+                />
               </SubSection>
 
               {guide.codeWords && guide.codeWords.length > 0 && (
                 <SubSection title="Code Words">
-                  <div className="rounded-lg overflow-hidden border border-gray-700">
-                    <div className="table-scroll overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead>
-                          <tr className="bg-gray-900 text-gray-100">
-                            <th className="px-3 py-2.5 text-left font-semibold text-xs uppercase tracking-wider">Code</th>
-                            <th className="px-3 py-2.5 text-left font-semibold text-xs uppercase tracking-wider">Meaning</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {guide.codeWords.map((cw, i) => (
-                            <tr key={i} className={`border-t border-gray-700 ${i % 2 === 0 ? 'bg-gray-800' : 'bg-gray-850'} text-gray-200`}>
-                              <td className="px-3 py-2.5 font-mono font-bold text-pink whitespace-nowrap">{cw.code}</td>
-                              <td className="px-3 py-2.5">{cw.meaning}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                  <DataTable
+                    headers={['Code', 'Meaning']}
+                    rows={guide.codeWords.map((cw) => [
+                      <span key={cw.code} className="font-mono font-bold text-pink">{cw.code}</span>,
+                      cw.meaning,
+                    ])}
+                  />
                 </SubSection>
               )}
 
