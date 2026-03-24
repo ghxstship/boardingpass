@@ -153,7 +153,7 @@ function DataTable({
   dark = false,
   highlightRow,
 }: {
-  headers: string[];
+  headers: (string | React.ReactNode)[];
   rows: (string | React.ReactNode)[][];
   dark?: boolean;
   highlightRow?: number;
@@ -164,7 +164,7 @@ function DataTable({
         <thead>
           <tr className={dark ? 'bg-gray-900 text-gray-100' : 'bg-black text-white'}>
             {headers.map((h, i) => (
-              <th key={i} className="px-3 py-2.5 text-left font-semibold text-xs uppercase tracking-wider whitespace-nowrap">
+              <th key={i} className="px-3 py-2.5 text-left font-semibold text-xs uppercase tracking-wider">
                 {h}
               </th>
             ))}
@@ -512,19 +512,31 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
 
           <SubSection title="Credential Access Matrix">
             <DataTable
-              headers={['Credential', 'Command Center', 'Back of House', 'Stage', 'Backstage', 'VIP Tables — Stage North', 'VIP Tables — Stage South', 'VIP Tables — Backstage', 'VIP Clubhouse', 'VIP Dance Floor', 'Grandstands (GA)']}
+              headers={[
+                'Credential',
+                'Grandstands (GA)',
+                'VIP Dance Floor',
+                'VIP Clubhouse',
+                <span key="vt-gd">VIP Tables<br />Grandstand</span>,
+                <span key="vt-ss">VIP Tables<br />Stage South</span>,
+                <span key="vt-sn">VIP Tables<br />Stage North</span>,
+                'Backstage',
+                'Stage',
+                'Back of House',
+                'Command Center',
+              ]}
               rows={CREDENTIAL_MATRIX.map((r) => [
                 <span key={r.credential} className="font-medium">{r.credential}</span>,
-                <AccessBadge key={`${r.credential}-cc`} access={r.commandCenter} />,
-                <AccessBadge key={`${r.credential}-boh`} access={r.backOfHouse} />,
-                <AccessBadge key={`${r.credential}-st`} access={r.stage} />,
-                <AccessBadge key={`${r.credential}-bs`} access={r.backstage} />,
-                <AccessBadge key={`${r.credential}-vstn`} access={r.vipStageTableNorth} />,
-                <AccessBadge key={`${r.credential}-vsts`} access={r.vipStageTableSouth} />,
-                <AccessBadge key={`${r.credential}-vb`} access={r.vipBackstage} />,
-                <AccessBadge key={`${r.credential}-vc`} access={r.vipClubhouse} />,
-                <AccessBadge key={`${r.credential}-vdf`} access={r.vipDanceFloor} />,
                 <AccessBadge key={`${r.credential}-ga`} access={r.grandstandsGA} />,
+                <AccessBadge key={`${r.credential}-vdf`} access={r.vipDanceFloor} />,
+                <AccessBadge key={`${r.credential}-vc`} access={r.vipClubhouse} />,
+                <AccessBadge key={`${r.credential}-vb`} access={r.vipBackstage} />,
+                <AccessBadge key={`${r.credential}-vsts`} access={r.vipStageTableSouth} />,
+                <AccessBadge key={`${r.credential}-vstn`} access={r.vipStageTableNorth} />,
+                <AccessBadge key={`${r.credential}-bs`} access={r.backstage} />,
+                <AccessBadge key={`${r.credential}-st`} access={r.stage} />,
+                <AccessBadge key={`${r.credential}-boh`} access={r.backOfHouse} />,
+                <AccessBadge key={`${r.credential}-cc`} access={r.commandCenter} />,
               ])}
               highlightRow={credHighlight}
             />
