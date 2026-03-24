@@ -455,7 +455,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
             <p className="text-sm text-dark leading-relaxed">{guide.rideshare}</p>
           </SubSection>
 
-          <SubSection title="Taking Transit">
+          <SubSection title="Arriving by Public Transit">
             <p className="text-sm text-dark leading-relaxed">{guide.transit}</p>
           </SubSection>
 
