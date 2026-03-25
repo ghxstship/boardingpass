@@ -65,12 +65,12 @@ export const RESOURCE_LOCATIONS: ResourceLocation[] = [
 ];
 
 export const EVACUATION_ROUTES: EvacuationRoute[] = [
-  { from: 'Dance Floor', route: 'Exit south through GA Entrance or nearest marked exit, proceed to Parking Zone C', destination: 'Parking Zone C' },
-  { from: 'Grandstands', route: 'Descend to ground level via nearest stairway, exit south, proceed to Parking Zone C', destination: 'Parking Zone C' },
-  { from: 'VIP Dance Floor', route: 'Exit via VIP Entrance or nearest marked exit, proceed south to Parking Zone C', destination: 'Parking Zone C' },
-  { from: 'VIP Clubhouse', route: 'Nearest marked exit to exterior, proceed south to Parking Zone C', destination: 'Parking Zone C' },
-  { from: 'Casino', route: 'Nearest marked exit per venue fire plan, proceed south to Parking Zone C', destination: 'Parking Zone C' },
-  { from: 'Parking Lots', route: 'Proceed south to Parking Zone C or exit property via E 4th Ave', destination: 'Parking Zone C / Off-property' },
+  { from: 'Dance Floor', route: 'Exit south through GA Entrance or nearest marked exit', destination: 'Parking Zone C' },
+  { from: 'Grandstands', route: 'Descend to ground level via nearest stairway, exit south', destination: 'Parking Zone C' },
+  { from: 'VIP Dance Floor', route: 'Exit via VIP Entrance or nearest marked exit, head south', destination: 'Parking Zone C' },
+  { from: 'VIP Clubhouse', route: 'Nearest marked exit to exterior, head south', destination: 'Parking Zone C' },
+  { from: 'Casino', route: 'Nearest marked exit per venue fire plan, head south', destination: 'Parking Zone C' },
+  { from: 'Parking Lots', route: 'Head south or exit property via E 4th Ave', destination: 'Parking Zone C / Off-property' },
 ];
 
 export const GUEST_FAQ: FAQPair[] = [
