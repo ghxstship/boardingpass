@@ -7,13 +7,13 @@ const guests: GuideConfig = {
   classification: '',
   scope: 'GA, VIP, VIP Table Holders',
   icon: '🦩',
-  callTime: 'Doors at 6:30 PM (VIP at 6:00 PM · VIP Table at 5:30 PM)',
-  hours: '6:00 PM – 2:00 AM',
+  callTime: 'Doors at 6:00 PM',
+  hours: '6:00 PM – 1:00 AM',
 
   // ── Before You Arrive ──────────────────────────────────────────────
   preArrival: [
     'Charge your phone — you\'ll need it for your ticket and rideshare home.',
-    'Grab your ID. This is 21+, no exceptions. Driver\'s license, passport, or state ID.',
+    'Grab your ID. GA is 18+ and VIP is 21+ — no exceptions. Driver\'s license, passport, or state ID.',
     'Check the weather — this is an outdoor event on the racetrack grounds.',
     'Wear comfortable shoes. Grass and gravel are part of the charm, but stilettos are not your friend here.',
     'Small bags only (12" × 6" × 12" max). Clear bags get you through the line faster.',
@@ -22,8 +22,8 @@ const guests: GuideConfig = {
   vehicleRoute: 'Enter via E 4th Ave and follow event signage to parking. Parking attendants will direct you to the right lot.',
   parking: 'Guest parking is in the main Hialeah Park lots off E 4th Ave. Follow signage and parking attendants to your spot. Arrive early — lots fill up.',
   rideshare: 'The rideshare loop is on E 32nd St and E 2nd Ave, eastbound only — no left turns. Have your driver follow signage to the designated drop-off zone. From the drop-off, follow the signs toward the entrance — it\'s a short walk.',
-  transit: 'MetroRail Green Line to Hialeah Station (125 E 21st St). From the platform, take the pedestrian bridge over the tracks to the north side, then follow event signage through the parking lot to the entrances. Runs 5 AM to midnight. $2.25 per trip. Heads up: MetroRail shuts down around midnight and this event runs until 2 AM. Have a rideshare plan for the way home.',
-  wayfinding: 'However you arrive — by car, rideshare, or transit — follow the event signage to the entrance gates. Look for the staff in pink — they\'ll point you in the right direction. Have your ticket ready on your phone (a screenshot works).',
+  transit: 'MetroRail Green Line to Hialeah Station (125 E 21st St). From the platform, take the pedestrian bridge over the tracks to the north side, then follow event signage through the parking lot to the entrances. Runs 5 AM to midnight. $2.25 per trip. Heads up: MetroRail shuts down around midnight and this event runs until 1 AM. Have a rideshare plan for the way home.',
+  wayfinding: 'However you arrive — by car, rideshare, or transit — follow the event signage to the entrance gates. Look for the staff in high-visibility vests — they\'ll point you in the right direction. Have your ticket ready on your phone (a screenshot works).',
   credentials: 'You\'ll receive a wristband at the gate. VIP and VIP Table holders will be directed to the VIP entrance at the Fountain Terrace.',
   entrance: 'GA: Main entrance gate. VIP + VIP Table: Fountain Terrace entrance.',
   additionalNotes: [
@@ -37,15 +37,13 @@ const guests: GuideConfig = {
   scheduleAltContent: 'Here\'s your evening at a glance. Arrive early, find your spot, and let the music take you.',
 
   showTimeline: [
-    { time: '5:30 PM', activity: 'VIP Table early admission' },
-    { time: '6:00 PM', activity: 'VIP + VIP Table doors open' },
-    { time: '6:30 PM', activity: 'GA doors open — welcome to the Racetrack' },
+    { time: '6:00 PM', activity: 'Doors open — welcome to the Racetrack' },
     { time: '7:00 PM', activity: 'Kaz James' },
     { time: '9:30 PM', activity: 'Carlita' },
     { time: '11:30 PM', activity: 'Black Coffee (Headline)' },
-    { time: '1:30 AM', activity: 'Last call' },
-    { time: '2:00 AM', activity: 'Music ends — bars close' },
-    { time: '2:30 AM', activity: 'Venue close — time to head home' },
+    { time: '1:00 AM', activity: 'Music ends' },
+    { time: '1:45 AM', activity: 'Last call — bars close' },
+    { time: '2:00 AM', activity: 'Venue close — time to head home' },
   ],
 
   venueAmenities: [
@@ -78,7 +76,7 @@ const guests: GuideConfig = {
 
   // ── Communications ─────────────────────────────────────────────────
   commsAltContent: [
-    'We\'re here to help. If you need anything, find a staff member — they\'re the ones in pink or high-vis.',
+    'We\'re here to help. If you need anything, find a staff member — they\'re the ones in high-visibility vests.',
     'The Guest Services near the GA Entrance is your go-to for questions, lost items, and general help.',
     'For medical help, tell any staff member or security guard — they\'ll call it in immediately.',
     'If you need ADA assistance, visit the Guest Services or ask any staff member.',
@@ -89,7 +87,7 @@ const guests: GuideConfig = {
   // ── Emergency ──────────────────────────────────────────────────────
   emergencyAltContent: [
     'If you hear an emergency announcement, stay calm and follow the instructions.',
-    'Look for staff members in pink or high-vis vests — they\'ll direct you to safety.',
+    'Look for staff members in high-visibility vests — they\'ll direct you to safety.',
     'If you need to evacuate, follow staff to the Assembly Point in Parking Zone C.',
     'Do not re-enter the venue after an evacuation until staff confirms it\'s safe.',
     'If you see something concerning, tell the nearest staff member or security guard.',

@@ -7,8 +7,8 @@ const production: GuideConfig = {
   classification: 'INTERNAL — PRODUCTION CREW ONLY',
   scope: 'Stage, Audio, Lighting, Video, Rigging, Backline, Power, Scenic',
   icon: '🦩',
-  callTime: '06:00 AM — Wednesday, March 25',
-  hours: 'Build: Mar 25–28 · Show Day: 06:00 AM – 02:30 AM · Strike: Immediate',
+  callTime: '3:00 PM — Saturday, March 28',
+  hours: 'Build: Mar 23–28 · Show Day: 3:00 PM – 2:00 AM · Strike: Immediate',
 
   preArrival: [
     'Confirm your department call time with your lead — not all departments load in at the same time.',
@@ -45,7 +45,7 @@ const production: GuideConfig = {
     { date: 'Fri Mar 28', time: '04:00 PM', activity: 'All production positions locked — show mode' },
   ],
   strikeSchedule: [
-    { date: 'Sat Mar 29', time: '02:30 AM', activity: 'Strike begins — Backline out first' },
+    { date: 'Sat Mar 29', time: '02:00 AM', activity: 'Strike begins — Backline out first' },
     { date: 'Sat Mar 29', time: '03:00 AM', activity: 'Audio & lighting de-rig' },
     { date: 'Sat Mar 29', time: '05:00 AM', activity: 'Stage teardown & scenic strike' },
     { date: 'Sat Mar 29', time: '08:00 AM', activity: 'Rigging & power strike — site restoration begins' },
@@ -64,14 +64,13 @@ const production: GuideConfig = {
     { time: '04:00 PM', activity: 'All production positions locked — show mode' },
     { time: '04:30 PM', activity: 'Security briefing & sweep' },
     { time: '05:00 PM', activity: 'Box Office opens' },
-    { time: '05:30 PM', activity: 'VIP Table early admission' },
-    { time: '06:00 PM', activity: 'VIP + VIP Table doors open' },
-    { time: '06:30 PM', activity: 'GA doors open' },
+    { time: '06:00 PM', activity: 'Doors open — all guests' },
     { time: '07:00 PM', activity: 'Kaz James — set begins' },
     { time: '09:30 PM', activity: 'Carlita — set begins' },
     { time: '11:30 PM', activity: 'Black Coffee — set begins (Headline)' },
-    { time: '02:00 AM', activity: 'Music ends — house lights up — venue close begins' },
-    { time: '02:30 AM', activity: 'Venue close complete — strike begins' },
+    { time: '01:00 AM', activity: 'Music ends — house lights up — venue close begins' },
+    { time: '01:45 AM', activity: 'Last call — bars close' },
+    { time: '02:00 AM', activity: 'Venue clear — strike begins' },
   ],
 
   ppeTable: [

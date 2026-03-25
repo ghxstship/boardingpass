@@ -19,7 +19,7 @@ export const EVENT = {
 export const SET_TIMES = [
   { time: '7:00 – 9:30 PM', artist: 'Kaz James' },
   { time: '9:30 – 11:30 PM', artist: 'Carlita' },
-  { time: '11:30 PM – 2:00 AM', artist: 'Black Coffee', note: 'Headline' },
+  { time: '11:30 PM – 1:00 AM', artist: 'Black Coffee', note: 'Headline' },
 ];
 
 export const SCHEDULE = [
@@ -38,7 +38,7 @@ export const TRANSIT_INFO = {
   triRail: 'Tri-Rail connects at Hialeah Market Station — transfer to MetroRail Green Line.',
   bus: 'Bus Route 37 stops at Palm Ave & W 28th St, about a 5-minute walk. Hialeah Flamingo and Marlin circulators also cover the area.',
   freebee: 'Freebee offers free on-demand rides within Hialeah via the app.',
-  warning: 'MetroRail shuts down around midnight and this event runs until 2 AM. Have a rideshare plan for the way home.',
+  warning: 'MetroRail shuts down around midnight and this event runs until 1 AM. Have a rideshare plan for the way home.',
 };
 
 export const CREDENTIAL_MATRIX: CredentialRow[] = [
@@ -74,9 +74,9 @@ export const EVACUATION_ROUTES: EvacuationRoute[] = [
 ];
 
 export const GUEST_FAQ: FAQPair[] = [
-  { question: 'What time do doors open?', answer: 'GA doors open at 6:30 PM. VIP and VIP Table holders may enter at 6:00 PM. VIP Table early admission begins at 5:30 PM.' },
-  { question: 'What time does the music start?', answer: 'Kaz James opens at 7:00 PM. Carlita takes over at 9:30 PM. Black Coffee headlines from 11:30 PM until 2:00 AM.' },
-  { question: 'Is this event 21+?', answer: 'Yes. This is a 21+ event. A valid government-issued photo ID is required for entry — no exceptions. Acceptable forms include a driver\'s license, passport, or state ID.' },
+  { question: 'What time do doors open?', answer: 'Doors open at 6:00 PM for all guests — GA, VIP, and VIP Table holders.' },
+  { question: 'What time does the music start?', answer: 'Kaz James opens at 7:00 PM. Carlita takes over at 9:30 PM. Black Coffee headlines from 11:30 PM until 1:00 AM.' },
+  { question: 'What are the age requirements?', answer: 'GA is 18+ and VIP is 21+. A valid government-issued photo ID is required for entry — no exceptions. Acceptable forms include a driver\'s license, passport, or state ID.' },
   { question: 'Is there a dress code?', answer: 'There is no formal dress code, but we encourage smart-casual attire. This is an outdoor event on racetrack grounds, so comfortable shoes are recommended. Stilettos and open-toe shoes can be challenging on grass and gravel surfaces.' },
   { question: 'What can I bring?', answer: 'You may bring a small clutch or bag (no larger than 12" × 6" × 12"). Clear bags are encouraged for faster entry. Sealed, empty reusable water bottles are allowed and can be filled at our free water refill stations inside the venue.' },
   { question: 'Are water bottles allowed?', answer: 'Sealed, empty reusable water bottles are welcome. We have free water refill stations at the GA Entrance, VIP area, and Paddock.' },
@@ -87,13 +87,13 @@ export const GUEST_FAQ: FAQPair[] = [
   { question: 'Are there ATMs on site?', answer: 'Yes. ATMs are located inside the Casino building and near the Clubhouse entrance. Standard transaction fees apply.' },
   { question: 'What if I lose something?', answer: 'Visit the Guest Services near the GA Entrance during the event. After the event, contact sos@ghxstship.pro with a description of the lost item.' },
   { question: 'What if I need medical help?', answer: 'Find any staff member or security guard — they will call for medical support immediately. The Medical Tent with EMTs and paramedics is located in the Paddock area. AEDs and first aid kits are positioned throughout the venue.' },
-  { question: 'Is the venue ADA accessible?', answer: 'Yes. ADA-accessible entrances, viewing areas, and restrooms are available. If you need accommodation, contact sos@ghxstship.pro before the event or ask any staff member on-site.' },
+  { question: 'Is the venue ADA accessible?', answer: 'Yes. ADA-accessible entrances, viewing areas, and restrooms are available. If you need accommodation, contact sos@ghxstship.pro before the event or ask any staff member in a high-visibility vest on-site.' },
   { question: 'Can I bring a professional camera?', answer: 'Professional cameras, drones, GoPros, and recording equipment are not permitted. Phone cameras are welcome for personal use.' },
   { question: 'Is there a smoking area?', answer: 'Yes. Designated smoking areas are located in the Paddock and near the Crew Parking perimeter. Smoking is not permitted inside any building or in the main GA/VIP areas.' },
   { question: 'What items are prohibited?', answer: 'Prohibited items include: weapons or sharp objects, illegal substances, outside food or beverages, professional cameras or recording equipment, drones, laser pointers, fireworks or flares, large bags or backpacks, chairs or blankets, glass containers, and any item deemed a safety risk by security.' },
-  { question: 'What happens if someone is too intoxicated?', answer: 'Our trained staff and security team will assess the situation compassionately. Guests who are visibly over-served will be offered water, a seat in a monitored area, and assistance arranging a safe ride home. Beverage service will be paused for that individual. We prioritize safety and dignity.' },
-  { question: 'What\'s the difference between VIP and GA?', answer: 'GA gives you full access to the Racetrack Grounds, Paddock viewing area, and all GA bars and amenities. VIP includes everything in GA plus access to the Fountain Terrace VIP area with premium bars, elevated viewing, and dedicated restrooms. VIP Table holders receive a reserved table, bottle service, and a dedicated server in the Fountain Terrace.' },
-  { question: 'How does VIP Table service work?', answer: 'VIP Table holders receive a reserved table in the Fountain Terrace with bottle service. Your dedicated server will be introduced upon arrival. Minimum spend requirements apply per your booking confirmation. Early admission begins at 5:30 PM so you can settle in before the music starts.' },
+  { question: 'What happens if someone is too intoxicated?', answer: 'Our trained staff and security team will assess the situation compassionately. Guests who are visibly over-served will be offered water, a seat in a monitored area, and assistance arranging a safe ride home. Beverage service will be paused for that individual. We prioritize safety and dignity. Note: alcohol service is limited to guests 21+ with valid ID.' },
+  { question: 'What\'s the difference between VIP and GA?', answer: 'GA (18+) gives you full access to the Racetrack Grounds, Paddock viewing area, and all GA bars and amenities. VIP (21+) includes everything in GA plus access to the Fountain Terrace VIP area with premium bars, elevated viewing, and dedicated restrooms. VIP Table holders receive a reserved table, bottle service, and a dedicated server in the Fountain Terrace.' },
+  { question: 'How does VIP Table service work?', answer: 'VIP Table holders receive a reserved table in the Fountain Terrace with bottle service. Your dedicated server will be introduced upon arrival. Minimum spend requirements apply per your booking confirmation. Doors open at 6:00 PM.' },
 ];
 
 export const ASSEMBLY_POINT = 'Parking Zone C (GA Lot)';

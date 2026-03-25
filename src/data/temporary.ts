@@ -39,7 +39,7 @@ const temporary: GuideConfig = {
     { date: 'As Scheduled', time: 'As Scheduled', activity: 'Contractor access — escort required' },
   ],
 
-  showAltContent: 'Show day operations are managed by the production team. Temporary access is typically not available during show hours (4:00 PM – 2:30 AM) unless pre-arranged with the Production Office.',
+  showAltContent: 'Show day operations are managed by the production team. Temporary access is typically not available during show hours (6:00 PM – 2:00 AM) unless pre-arranged with the Production Office.',
 
   safetyAltContent: [
     'Wear your high-vis vest and closed-toe shoes at all times on site.',

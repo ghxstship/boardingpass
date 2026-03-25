@@ -8,7 +8,7 @@ const talentIndustry: GuideConfig = {
   scope: 'Artists, Touring Parties, Management, Agents, Industry Guests, Media',
   icon: '🦩',
   callTime: 'Per your Liaison — check your advance email',
-  hours: 'Event: 6:00 PM – 2:00 AM',
+  hours: 'Event: 6:00 PM – 1:00 AM',
 
   preArrival: [
     'Your Artist Liaison will confirm your arrival time, vehicle instructions, and credential pickup.',
@@ -44,13 +44,11 @@ const talentIndustry: GuideConfig = {
   showTimeline: [
     { time: '02:00 PM', activity: 'Sound check window opens (per advance schedule)' },
     { time: '04:00 PM', activity: 'Green Room open — catering available' },
-    { time: '05:30 PM', activity: 'VIP Table early admission' },
-    { time: '06:00 PM', activity: 'Doors open (VIP + VIP Table)' },
-    { time: '06:30 PM', activity: 'GA doors open' },
+    { time: '06:00 PM', activity: 'Doors open — all guests' },
     { time: '07:00 PM', activity: 'Kaz James — set begins' },
     { time: '09:30 PM', activity: 'Carlita — set begins' },
     { time: '11:30 PM', activity: 'Black Coffee — set begins (Headline)' },
-    { time: '02:00 AM', activity: 'Music ends — event close' },
+    { time: '01:00 AM', activity: 'Music ends — event close' },
   ],
 
   safetyAltContent: [
