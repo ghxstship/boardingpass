@@ -29,8 +29,8 @@ const foodBeverage: GuideConfig = {
   additionalNotes: [
     'All F&B staff must complete TIPS (or equivalent) training before the event.',
     'No consumption of alcohol during your shift \u2014 zero tolerance.',
-    'No personal phones at bar stations.',
-    'Report all spills immediately for safety.',
+    'Personal phones, earbuds, and smartwatches are not permitted at bar stations during service.',
+    'Report all spills to your bar lead immediately — unattended spills are a slip hazard and a liability.',
   ],
 
   buildSchedule: [
@@ -48,7 +48,7 @@ const foodBeverage: GuideConfig = {
 
   showTimeline: [
     { time: '04:00 PM', activity: 'All bars staffed & ready' },
-    { time: '05:00 PM', activity: 'Box Office opens' },
+    { time: '05:00 PM', activity: 'Virtual Box Office opens' },
     { time: '06:00 PM', activity: 'Doors open — all bars open' },
     { time: '07:00 PM', activity: 'Kaz James — set begins' },
     { time: '09:30 PM', activity: 'Carlita — set begins' },

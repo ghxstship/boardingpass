@@ -52,7 +52,7 @@ const production: GuideConfig = {
   showTimeline: [
     { time: '04:00 PM', activity: 'All production positions locked — show mode' },
     { time: '04:30 PM', activity: 'Security briefing & venue sweep' },
-    { time: '05:00 PM', activity: 'Box Office opens' },
+    { time: '05:00 PM', activity: 'Virtual Box Office opens' },
     { time: '06:00 PM', activity: 'Doors open — all guests' },
     { time: '07:00 PM', activity: 'Kaz James — set begins' },
     { time: '09:30 PM', activity: 'Carlita — set begins' },
