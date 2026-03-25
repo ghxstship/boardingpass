@@ -42,7 +42,6 @@ const talentIndustry: GuideConfig = {
     'Your schedule is managed by your Artist Liaison. Key milestones will be communicated directly to you. If you have questions about timing, contact your Liaison — not the Production Office.',
 
   showTimeline: [
-    { time: '02:00 PM', activity: 'Sound check window opens (per advance schedule)' },
     { time: '04:00 PM', activity: 'Green Room open — catering available' },
     { time: '06:00 PM', activity: 'Doors open — all guests' },
     { time: '07:00 PM', activity: 'Kaz James — set begins' },

@@ -19,11 +19,10 @@ import {
 const PAGE_TITLES = [
   'Event & Venue',
   'Before You Arrive',
-  'Build & Credentials',
   'Show Day',
-  'Safety',
+  'The Experience',
+  'Safety & Security',
   'Communications',
-  'Emergency',
   'Resources',
   'Guest FAQ',
   'Role Guide',
@@ -196,27 +195,24 @@ function DataTable({
   );
 }
 
-function ContactList({ contacts }: { contacts: ContactSection[] }) {
-  return (
-    <div className="space-y-1">
-      {contacts.map((c, i) =>
-        c.type === 'header' ? (
-          <h4
-            key={i}
-            className="font-display font-bold text-sm uppercase tracking-wider text-dark pt-4 pb-1 first:pt-0"
-          >
-            {c.label}
-          </h4>
-        ) : (
-          <div key={i} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 py-2 border-b border-border/50 text-sm">
-            <span className="font-medium text-dark min-w-[160px]">{c.label}</span>
-            {c.phone && <span className="font-mono text-xs text-pink">{c.phone}</span>}
-            {c.notes && <span className="text-light text-xs">{c.notes}</span>}
-          </div>
-        )
-      )}
-    </div>
-  );
+function ContactTable({ contacts }: { contacts: ContactSection[] }) {
+  const rows: (string | React.ReactNode)[][] = [];
+  for (const c of contacts) {
+    if (c.type === 'header') {
+      rows.push([
+        <span key={c.label} className="font-bold uppercase tracking-wider text-xs text-dark">{c.label}</span>,
+        '',
+        '',
+      ]);
+    } else {
+      rows.push([
+        <span key={c.label} className="font-medium">{c.label}</span>,
+        c.phone ? <span key={`${c.label}-p`} className="font-mono text-xs text-pink">{c.phone}</span> : '',
+        c.notes || '',
+      ]);
+    }
+  }
+  return <DataTable headers={['Contact', 'Phone / Email', 'Notes']} rows={rows} />;
 }
 
 function PrintButton() {
@@ -250,9 +246,15 @@ function AccessBadge({ access }: { access: boolean }) {
   );
 }
 
-/* ─── Credential row highlight ─── */
-function getCredentialHighlightIndex(tier: number): number {
-  // Matrix rows: Core+Escort(0), Production(1), Crew(2), Artist(3), Backstage(4), Stage Table North(5), Stage Table South(6), Grandstand Table(7), VIP(8)
+/* ─── Credential filtering ─── */
+const GUEST_FACING_CREDENTIALS = ['Backstage', 'Stage Table North', 'Stage Table South', 'Grandstand Table', 'VIP'];
+
+function getCredentialHighlightIndex(tier: number, filtered: boolean): number {
+  if (filtered) {
+    // Guest filtered matrix: Backstage(0), STN(1), STS(2), GT(3), VIP(4)
+    return tier === 5 ? 4 : -1;
+  }
+  // Full matrix: Core+Escort(0), Production(1), Crew(2), Artist(3), Backstage(4), STN(5), STS(6), GT(7), VIP(8)
   const map: Record<number, number> = { 1: 1, 2: 2, 3: 2, 4: 3, 5: 8, 6: -1 };
   return map[tier] ?? -1;
 }
@@ -278,7 +280,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
       rootMargin: '-100px 0px -60% 0px',
       threshold: 0,
     });
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 9; i++) {
       const el = document.getElementById(`section-${i}`);
       if (el) {
         sectionRefs.current[i] = el;
@@ -293,7 +295,13 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const credHighlight = getCredentialHighlightIndex(guide.tier);
+  const isGuestOrTemp = guide.tier >= 5;
+  const showFilteredMatrix = guide.tier === 5;
+  const hideMatrix = guide.tier === 6;
+  const credHighlight = getCredentialHighlightIndex(guide.tier, showFilteredMatrix);
+  const filteredMatrix = showFilteredMatrix
+    ? CREDENTIAL_MATRIX.filter((r) => GUEST_FACING_CREDENTIALS.includes(r.credential))
+    : CREDENTIAL_MATRIX;
 
   return (
     <div className="min-h-screen bg-white">
@@ -482,98 +490,163 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
           <PrintButton />
         </SectionWrapper>
 
-        {/* ═══ Page 3: Build & Credentials ═══ */}
-        <SectionWrapper num={3} title={guide.tier <= 3 ? 'Build & Strike' : guide.tier === 5 ? 'Your Schedule' : 'Schedule & Credentials'} id="section-3">
-          {guide.buildSchedule && guide.buildSchedule.length > 0 && (
-            <>
-              <SubSection title="Build Schedule">
-                <DataTable
-                  headers={['Date', 'Time', 'Activity']}
-                  rows={guide.buildSchedule.map((s) => [s.date, s.time, s.activity])}
-                />
-              </SubSection>
-              {guide.strikeSchedule && guide.strikeSchedule.length > 0 && (
-                <SubSection title="Strike Schedule">
-                  <DataTable
-                    headers={['Date', 'Time', 'Activity']}
-                    rows={guide.strikeSchedule.map((s) => [s.date, s.time, s.activity])}
-                  />
-                </SubSection>
-              )}
-            </>
-          )}
-
+        {/* ═══ Page 3: Show Day (consolidated schedule + timeline) ═══ */}
+        <SectionWrapper
+          num={3}
+          title={guide.tier <= 3 ? 'Build & Show Day' : guide.tier === 5 ? 'The Night' : guide.tier === 4 ? 'The Program' : 'Schedule'}
+          id="section-3"
+        >
           {guide.scheduleAltContent && (
             <p className="text-sm text-dark leading-relaxed mb-6">{guide.scheduleAltContent}</p>
           )}
 
-          <SubSection title="Credential Access Matrix">
-            <DataTable
-              headers={[
-                'Credential',
-                'Grandstands (GA)',
-                'VIP Dance Floor',
-                'VIP Clubhouse',
-                <span key="vt-gd">VIP Tables<br />Grandstand</span>,
-                <span key="vt-ss">VIP Tables<br />Stage South</span>,
-                <span key="vt-sn">VIP Tables<br />Stage North</span>,
-                'Backstage',
-                'Stage',
-                'Back of House',
-                'Command Center',
-              ]}
-              rows={CREDENTIAL_MATRIX.map((r) => [
-                <span key={r.credential} className="font-medium">{r.credential}</span>,
-                <AccessBadge key={`${r.credential}-ga`} access={r.grandstandsGA} />,
-                <AccessBadge key={`${r.credential}-vdf`} access={r.vipDanceFloor} />,
-                <AccessBadge key={`${r.credential}-vc`} access={r.vipClubhouse} />,
-                <AccessBadge key={`${r.credential}-vb`} access={r.vipBackstage} />,
-                <AccessBadge key={`${r.credential}-vsts`} access={r.vipStageTableSouth} />,
-                <AccessBadge key={`${r.credential}-vstn`} access={r.vipStageTableNorth} />,
-                <AccessBadge key={`${r.credential}-bs`} access={r.backstage} />,
-                <AccessBadge key={`${r.credential}-st`} access={r.stage} />,
-                <AccessBadge key={`${r.credential}-boh`} access={r.backOfHouse} />,
-                <AccessBadge key={`${r.credential}-cc`} access={r.commandCenter} />,
-              ])}
-              highlightRow={credHighlight}
-            />
-          </SubSection>
-          <PrintButton />
-        </SectionWrapper>
+          {guide.buildSchedule && guide.buildSchedule.length > 0 && (
+            <SubSection title="Build Schedule">
+              <DataTable
+                headers={['Date', 'Time', 'Activity']}
+                rows={guide.buildSchedule.map((s) => [s.date, s.time, s.activity])}
+              />
+            </SubSection>
+          )}
 
-        {/* ═══ Page 4: Show Day ═══ */}
-        <SectionWrapper num={4} title={guide.tier <= 3 ? 'Show Day Timeline' : guide.tier === 5 ? 'The Night' : 'The Program'} id="section-4">
-          {guide.showAltContent && (
-            <p className="text-sm text-dark leading-relaxed mb-6">{guide.showAltContent}</p>
+          {guide.strikeSchedule && guide.strikeSchedule.length > 0 && (
+            <SubSection title="Strike Schedule">
+              <DataTable
+                headers={['Date', 'Time', 'Activity']}
+                rows={guide.strikeSchedule.map((s) => [s.date, s.time, s.activity])}
+              />
+            </SubSection>
           )}
 
           {guide.showTimeline && guide.showTimeline.length > 0 && (
-            <DataTable
-              headers={['Time', 'Activity']}
-              rows={guide.showTimeline.map((t) => [
-                <span key={t.time} className="font-mono text-xs text-pink whitespace-nowrap">{t.time}</span>,
-                t.activity,
-              ])}
-            />
+            <SubSection title={guide.tier <= 3 ? 'Show Day Milestones' : guide.tier === 5 ? 'Your Evening' : 'Timeline'}>
+              <DataTable
+                headers={['Time', 'Activity']}
+                rows={guide.showTimeline.map((t) => [
+                  <span key={t.time} className="font-mono text-xs text-pink whitespace-nowrap">{t.time}</span>,
+                  t.activity,
+                ])}
+              />
+            </SubSection>
           )}
 
+          {guide.showAltContent && (
+            <p className="text-sm text-dark leading-relaxed mt-4">{guide.showAltContent}</p>
+          )}
+          <PrintButton />
+        </SectionWrapper>
+
+        {/* ═══ Page 4: The Experience ═══ */}
+        <SectionWrapper num={4} title="The Experience" id="section-4">
           {guide.venueAmenities && guide.venueAmenities.length > 0 && (
-            <SubSection title="On Site">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <SubSection title="Amenities">
+              <ul className="space-y-3">
                 {guide.venueAmenities.map((a, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-dark">
-                    <span className="text-pink shrink-0">&bull;</span>
+                    <span className="text-pink shrink-0 mt-0.5">&bull;</span>
                     {a}
                   </li>
                 ))}
               </ul>
             </SubSection>
           )}
+
+          {guide.accessibilityItems && guide.accessibilityItems.length > 0 && (
+            <SubSection title="Accessibility">
+              <div className="space-y-3">
+                {guide.accessibilityItems.map((a, i) => (
+                  <div key={i}>
+                    <p className="font-medium text-sm text-dark">{a.feature}</p>
+                    <p className="text-sm text-medium">{a.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </SubSection>
+          )}
+
+          {guide.sustainabilityItems && guide.sustainabilityItems.length > 0 && (
+            <SubSection title="Sustainability">
+              <div className="space-y-3">
+                {guide.sustainabilityItems.map((s, i) => (
+                  <div key={i}>
+                    <p className="font-medium text-sm text-dark">{s.initiative}</p>
+                    <p className="text-sm text-medium">{s.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </SubSection>
+          )}
+
+          {!hideMatrix && (
+            <SubSection title="Credential Access Matrix">
+              {showFilteredMatrix ? (
+                <DataTable
+                  headers={[
+                    'Credential',
+                    'Grandstands (GA)',
+                    'VIP Dance Floor',
+                    'VIP Clubhouse',
+                    <span key="vt-gd">VIP Tables<br />Grandstand</span>,
+                    <span key="vt-ss">VIP Tables<br />Stage South</span>,
+                    <span key="vt-sn">VIP Tables<br />Stage North</span>,
+                    'Backstage',
+                  ]}
+                  rows={filteredMatrix.map((r) => [
+                    <span key={r.credential} className="font-medium">{r.credential}</span>,
+                    <AccessBadge key={`${r.credential}-ga`} access={r.grandstandsGA} />,
+                    <AccessBadge key={`${r.credential}-vdf`} access={r.vipDanceFloor} />,
+                    <AccessBadge key={`${r.credential}-vc`} access={r.vipClubhouse} />,
+                    <AccessBadge key={`${r.credential}-vb`} access={r.vipBackstage} />,
+                    <AccessBadge key={`${r.credential}-vsts`} access={r.vipStageTableSouth} />,
+                    <AccessBadge key={`${r.credential}-vstn`} access={r.vipStageTableNorth} />,
+                    <AccessBadge key={`${r.credential}-bs`} access={r.backstage} />,
+                  ])}
+                  highlightRow={credHighlight}
+                />
+              ) : (
+                <DataTable
+                  headers={[
+                    'Credential',
+                    'Grandstands (GA)',
+                    'VIP Dance Floor',
+                    'VIP Clubhouse',
+                    <span key="vt-gd">VIP Tables<br />Grandstand</span>,
+                    <span key="vt-ss">VIP Tables<br />Stage South</span>,
+                    <span key="vt-sn">VIP Tables<br />Stage North</span>,
+                    'Backstage',
+                    'Stage',
+                    'Back of House',
+                    'Command Center',
+                  ]}
+                  rows={CREDENTIAL_MATRIX.map((r) => [
+                    <span key={r.credential} className="font-medium">{r.credential}</span>,
+                    <AccessBadge key={`${r.credential}-ga`} access={r.grandstandsGA} />,
+                    <AccessBadge key={`${r.credential}-vdf`} access={r.vipDanceFloor} />,
+                    <AccessBadge key={`${r.credential}-vc`} access={r.vipClubhouse} />,
+                    <AccessBadge key={`${r.credential}-vb`} access={r.vipBackstage} />,
+                    <AccessBadge key={`${r.credential}-vsts`} access={r.vipStageTableSouth} />,
+                    <AccessBadge key={`${r.credential}-vstn`} access={r.vipStageTableNorth} />,
+                    <AccessBadge key={`${r.credential}-bs`} access={r.backstage} />,
+                    <AccessBadge key={`${r.credential}-st`} access={r.stage} />,
+                    <AccessBadge key={`${r.credential}-boh`} access={r.backOfHouse} />,
+                    <AccessBadge key={`${r.credential}-cc`} access={r.commandCenter} />,
+                  ])}
+                  highlightRow={credHighlight}
+                />
+              )}
+            </SubSection>
+          )}
+
+          {hideMatrix && (
+            <GoldCallout>
+              <p className="text-sm text-dark">Temporary credentials do not grant access to any guest, VIP, crew, or backstage areas. Your escort will guide you to your authorized work zone.</p>
+            </GoldCallout>
+          )}
           <PrintButton />
         </SectionWrapper>
 
-        {/* ═══ Page 5: Safety ═══ */}
-        <SectionWrapper num={5} title={guide.tier <= 3 ? 'Gear Up' : 'Your Safety'} id="section-5">
+        {/* ═══ Page 5: Safety & Security (combined old 5 + 7) ═══ */}
+        <SectionWrapper num={5} title={guide.tier <= 3 ? 'Safety & Security' : 'Your Safety'} id="section-5">
           {guide.ppeTable && guide.ppeTable.length > 0 && (
             <SubSection title="Required Personal Protective Equipment">
               <DataTable
@@ -604,22 +677,45 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
             </ul>
           )}
 
-          {guide.accessibilityItems && guide.accessibilityItems.length > 0 && (
-            <SubSection title="Accessibility">
-              <div className="space-y-3">
-                {guide.accessibilityItems.map((a, i) => (
-                  <div key={i}>
-                    <p className="font-medium text-sm text-dark">{a.feature}</p>
-                    <p className="text-sm text-medium">{a.detail}</p>
-                  </div>
+          {guide.securityPolicies && guide.securityPolicies.length > 0 && (
+            <SubSection title="Security & Policies">
+              <ul className="space-y-2">
+                {guide.securityPolicies.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-dark">
+                    <span className="text-pink mt-0.5 shrink-0">&bull;</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </SubSection>
+          )}
+
+          {guide.emergencySOPs && guide.emergencySOPs.length > 0 && (
+            <SubSection title="Emergency Procedures">
+              <div className="space-y-0">
+                {guide.emergencySOPs.map((sop, i) => (
+                  <SOPCard key={i} sop={sop} />
                 ))}
               </div>
+            </SubSection>
+          )}
+
+          {guide.emergencyAltContent && guide.emergencyAltContent.length > 0 && (
+            <SubSection title="In an Emergency">
+              <ul className="space-y-2">
+                {guide.emergencyAltContent.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-dark">
+                    <span className="text-pink mt-0.5 shrink-0">&bull;</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </SubSection>
           )}
           <PrintButton />
         </SectionWrapper>
 
-        {/* ═══ Page 6: Communications ═══ */}
+        {/* ═══ Page 6: Communications / Who to Contact ═══ */}
         <SectionWrapper num={6} title={guide.tier <= 3 ? 'Stay Connected' : 'Who to Contact'} id="section-6">
           {guide.radioChannels && guide.radioChannels.length > 0 && (
             <>
@@ -683,47 +779,15 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
               <p className="text-sm text-dark mb-4">{guide.contactsIntro}</p>
             </div>
           )}
+
+          <SubSection title="Contact Directory">
+            <ContactTable contacts={guide.contactDirectory} />
+          </SubSection>
           <PrintButton />
         </SectionWrapper>
 
-        {/* ═══ Page 7: Emergency ═══ */}
-        <SectionWrapper num={7} title="If Something Goes Wrong" id="section-7">
-          {guide.emergencySOPs && guide.emergencySOPs.length > 0 && (
-            <div className="space-y-0">
-              {guide.emergencySOPs.map((sop, i) => (
-                <SOPCard key={i} sop={sop} />
-              ))}
-            </div>
-          )}
-
-          {guide.emergencyAltContent && guide.emergencyAltContent.length > 0 && (
-            <ul className="space-y-2">
-              {guide.emergencyAltContent.map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-dark">
-                  <span className="text-pink mt-0.5 shrink-0">&bull;</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {guide.securityPolicies && guide.securityPolicies.length > 0 && (
-            <SubSection title="Security & Policies">
-              <ul className="space-y-2">
-                {guide.securityPolicies.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-dark">
-                    <span className="text-pink mt-0.5 shrink-0">&bull;</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </SubSection>
-          )}
-          <PrintButton />
-        </SectionWrapper>
-
-        {/* ═══ Page 8: Resources & Evacuation ═══ */}
-        <SectionWrapper num={8} title="Help Is Here — Resources & Evacuation" id="section-8">
+        {/* ═══ Page 7: Resources & Evacuation ═══ */}
+        <SectionWrapper num={7} title="Help Is Here — Resources & Evacuation" id="section-7">
           <SubSection title="Emergency Resource Locations">
             <DataTable
               headers={['Resource', 'Location', 'Zone']}
@@ -763,24 +827,11 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
               />
             </SubSection>
           )}
-
-          {guide.accessibilityItems && guide.tier !== 6 && (
-            <SubSection title="Accessibility">
-              <div className="space-y-3">
-                {guide.accessibilityItems.map((a, i) => (
-                  <div key={i}>
-                    <p className="font-medium text-sm text-dark">{a.feature}</p>
-                    <p className="text-sm text-medium">{a.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </SubSection>
-          )}
           <PrintButton />
         </SectionWrapper>
 
-        {/* ═══ Page 9: Guest FAQ ═══ */}
-        <SectionWrapper num={9} title="The Answers You Need — Guest FAQ" id="section-9">
+        {/* ═══ Page 8: Guest FAQ ═══ */}
+        <SectionWrapper num={8} title="The Answers You Need — Guest FAQ" id="section-8">
           {guide.guestFAQIntro && (
             <p className="text-sm text-dark leading-relaxed mb-6 italic">{guide.guestFAQIntro}</p>
           )}
@@ -792,11 +843,11 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
           <PrintButton />
         </SectionWrapper>
 
-        {/* ═══ Page 10: Role Guide + Contacts ═══ */}
+        {/* ═══ Page 9: Role Guide + Contacts ═══ */}
         <SectionWrapper
-          num={10}
+          num={9}
           title={guide.roleFAQTitle || (guide.tier === 5 ? 'More Info' : 'Contacts')}
-          id="section-10"
+          id="section-9"
         >
           {guide.roleFAQ && guide.roleFAQ.length > 0 && (
             <SubSection title={guide.roleFAQTitle || 'FAQ'}>
@@ -807,23 +858,6 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
               </div>
             </SubSection>
           )}
-
-          {guide.sustainabilityItems && guide.sustainabilityItems.length > 0 && (
-            <SubSection title="Sustainability">
-              <div className="space-y-3">
-                {guide.sustainabilityItems.map((s, i) => (
-                  <div key={i}>
-                    <p className="font-medium text-sm text-dark">{s.initiative}</p>
-                    <p className="text-sm text-medium">{s.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </SubSection>
-          )}
-
-          <SubSection title="Contact Directory">
-            <ContactList contacts={guide.contactDirectory} />
-          </SubSection>
           <PrintButton />
         </SectionWrapper>
       </main>

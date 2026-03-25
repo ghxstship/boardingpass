@@ -47,14 +47,15 @@ const guests: GuideConfig = {
   ],
 
   venueAmenities: [
-    'Free water refill stations (GA Entrance, VIP area, Paddock)',
-    'Free earplugs (First Aid stations)',
-    'ATMs (Casino building + Clubhouse entrance)',
-    'Restrooms (GA area, VIP area, Clubhouse)',
-    'Guest Services (near GA Entrance)',
-    'Covered areas (Paddock, Clubhouse balcony)',
-    'Smoking areas (Paddock, Crew Parking perimeter)',
-    'ADA-accessible entrances, viewing areas, and restrooms',
+    'Water Stations — Free refill stations located near all restroom facilities. Bring your reusable bottle.',
+    'Earplugs — Free earplugs available at First Aid stations. Your hearing matters.',
+    'ATMs — Located inside the Casino building and near the Clubhouse entrance.',
+    'Restrooms — Available in the GA area, VIP area, and Clubhouse. ADA-accessible units in all locations.',
+    'Guest Services — Near the GA Entrance for questions, lost items, and ADA assistance.',
+    'Covered Areas — The Paddock and Clubhouse balcony offer shelter from sun and weather.',
+    'Smoking Areas — Designated areas in the Paddock and near the Crew Parking perimeter. No smoking inside any building or in the main GA/VIP areas.',
+    'Food & Drink — Full bar service with craft cocktails, beer, wine, and non-alcoholic options. GA is 18+, alcohol service is 21+ with valid ID. VIP Table holders receive dedicated bottle service.',
+    'Charging — Portable chargers are welcome. Keep your phone charged for your ticket and rideshare home.',
   ],
 
   // ── Safety ─────────────────────────────────────────────────────────
