@@ -5,7 +5,7 @@ const production: GuideConfig = {
   tier: 1,
   title: 'PRODUCTION',
   classification: 'INTERNAL — PRODUCTION CREW ONLY',
-  scope: 'Stage, Audio, Lighting, Video, Rigging, Backline, Power, Scenic',
+  scope: 'Site, Executive, Admin, Technical, Experiential',
   icon: '🦩',
   callTime: '3:00 PM — Saturday, March 28',
   hours: 'Build: Mar 23–28 · Show Day: 3:00 PM – 2:00 AM · Strike: Immediate',
@@ -23,11 +23,12 @@ const production: GuideConfig = {
   parking: 'Crew parking is accessible via E 4th Ave — the same route as guest parking. Follow the event signage and park in the zone corresponding to your issued parking pass. Display your parking pass on the dashboard at all times. Unauthorized vehicles will be towed.',
   rideshare: 'The rideshare loop is on E 32nd St and E 2nd Ave, eastbound only — no left turns. Have your driver follow signage to the designated drop-off zone. From the drop-off, follow signage to the Production Gate.',
   transit: 'MetroRail Green Line to Hialeah Station (125 E 21st St). From the platform, take the pedestrian bridge over the tracks to the north side, then follow event signage through the parking lot to the Production Gate. Runs 5 AM to midnight. $2.25 per trip. MetroRail shuts down around midnight — have a rideshare plan for the way home.',
-  wayfinding: 'However you arrive — by car, rideshare, or transit — follow event signage to the Production Gate on E 32nd St. From there, follow the marked path to the Command Center (Clubhouse 2F) for check-in.',
-  credentials: 'Check in at the Command Center (Clubhouse 2F) with valid photo ID. You will receive a Production wristband and department-specific lanyard. Wear your credential visibly at all times. Lost credentials must be reported to the Command Center immediately.',
-  entrance: 'Production Gate — E 32nd St (north side of venue). All crew enter here.',
+  wayfinding: 'However you arrive — by car, rideshare, or transit — follow event signage toward the venue entrances.',
+  credentials: 'If you do not have your credential, proceed to the Staff Check-in lane at Guest Services (near the GA Entrance) with valid photo ID to pick up your wristband and lanyard. If you already have your credential, proceed directly to the designated Staff entrance lanes at the VIP entrance. Wear your credential visibly at all times. Lost credentials must be reported to the Production Office immediately.',
+  entrance: 'Staff without credentials: Staff Check-in lane at Guest Services. Staff with credentials: Staff entrance lanes at VIP entrance.',
   additionalNotes: [
     'Cell service will be unreliable during peak hours. Rely on radios for all operational communication.',
+    'The Command Center (Clubhouse 2F) is restricted to Core credential holders and public safety leadership only. For admin, radios, and crew services, report to the Production Office.',
     'The Clubhouse is a historic building. Do not drill, nail, screw, or tape into any original surfaces without explicit approval from the Venue Liaison.',
     'No personal vehicles are permitted beyond the Crew Parking lot. All gear moves via hand cart or approved production vehicle only.',
     'Pets, personal guests, and children are not permitted in production areas at any time.',
@@ -148,7 +149,7 @@ const production: GuideConfig = {
         'If the patient is unresponsive, begin CPR if trained. Locate nearest AED.',
         'Production Manager notifies Executive Producer. Stage Manager assesses whether show continues.',
       ],
-      note: 'AEDs are located at: Command Center (Clubhouse 2F), GA Entrance gate, VIP Entrance (Fountain Terrace), and Medical (Paddock).',
+      note: 'AEDs are located at: Command Center (Clubhouse 2F), Production Office, GA Entrance gate, VIP Entrance (Fountain Terrace), and Medical (Paddock).',
     },
     {
       title: 'Burglary or Theft',
@@ -246,7 +247,7 @@ const production: GuideConfig = {
       title: 'Acts of Terror, Active Shooter, or Bomb Threat',
       code: 'Code Black',
       steps: [
-        'Call "Code Black" on CH 2 (Security) — do not broadcast details on open channels.',
+        'Call "Code Black" on CH 1 (Emergency) — do not broadcast details on open channels.',
         'If you hear or see a threat: Run if you can. Hide if you can\'t run. Fight only as a last resort.',
         'Security team responds. ODPO (Off-Duty Police) engages.',
         'Production Manager calls 911 immediately.',
@@ -288,7 +289,6 @@ const production: GuideConfig = {
     { item: 'VIP Capacity', spec: '2,000 (NFPA 102)' },
     { item: 'Backstage Capacity', spec: '500 (NFPA 102)' },
     { item: 'Max Crowd Density (outdoor)', spec: '2.5 persons/m² (NFPA 102)' },
-    { item: 'Exits Required (GA)', spec: '8 exits, min 44" each (NFPA 101)' },
   ],
 
   accessibilityItems: [
@@ -302,7 +302,7 @@ const production: GuideConfig = {
   guestFAQIntro: 'Every member of this team should be able to answer the most common guest questions confidently and accurately.',
 
   roleFAQ: [
-    { question: 'Where is the Production Office?', answer: 'Clubhouse, second floor. Enter via the Production Gate (E 32nd St) and follow signs through the Clubhouse lobby to the stairs or elevator.' },
+    { question: 'Where is the Production Office?', answer: 'The Production Office handles admin, crew services, and radio distribution. Its location will be on your call sheet. The Command Center (Clubhouse 2F) is separate and restricted to Core credential holders and public safety leadership.' },
     { question: 'Where do I pick up my radio?', answer: 'Radios are distributed at the Production Office during check-in. Return your radio to the Production Office at the end of your shift or at strike. You are responsible for your assigned radio.' },
     { question: 'What\'s the Wi-Fi?', answer: 'Network: GHXSTSHIP-PROD · Password: distributed at check-in. Do not share with guests. This is a production network — not for streaming.' },
     { question: 'Where is craft services?', answer: 'Craft services (crew catering) is on the ground floor of the Clubhouse. Breakfast from 06:00 AM, lunch at 12:00 PM, dinner at 05:00 PM. Snacks and beverages available throughout the day.' },
@@ -318,13 +318,10 @@ const production: GuideConfig = {
   roleFAQTitle: 'Crew Intel',
 
   contactDirectory: [
-    { type: 'header', label: 'Production & Operations' },
-    { type: 'entry', label: 'Production Office', phone: 'On call sheet', notes: 'Clubhouse 2F — open from first call to site clear' },
-    { type: 'entry', label: 'Amy Reed — Operations', phone: 'On call sheet', notes: 'Operations Manager — F&B, cleaning, parking, logistics' },
+    { type: 'header', label: 'Event Producer' },
     { type: 'entry', label: 'GHXSTSHIP Industries', phone: 'sos@ghxstship.pro', notes: 'Executive Producer — escalation line' },
     { type: 'header', label: 'Venue' },
     { type: 'entry', label: 'Hialeah Park Casino', phone: '(305) 885-8000', notes: 'Main venue line — not for production use during event' },
-    { type: 'entry', label: 'Venue Liaison', phone: 'On call sheet', notes: 'Building access, historic preservation, venue-specific rules' },
     { type: 'header', label: 'Emergency Services' },
     { type: 'entry', label: 'Police / Fire / EMS', phone: '911', notes: 'Always call 911 for life-threatening emergencies' },
     { type: 'entry', label: 'Hialeah Police (Non-Emergency)', phone: '(305) 687-2525', notes: 'Non-emergency police' },
@@ -335,7 +332,6 @@ const production: GuideConfig = {
     { type: 'entry', label: 'Miami-Dade Water & Sewer', phone: '(305) 665-7471', notes: 'Water issues' },
     { type: 'header', label: 'Transit' },
     { type: 'entry', label: 'Miami-Dade Transit', phone: '(305) 891-3131', notes: 'MetroRail, MetroBus schedules' },
-    { type: 'entry', label: 'Freebee Hialeah', phone: 'App-based', notes: 'Free on-demand rides within Hialeah' },
     { type: 'header', label: 'Well-Being' },
     { type: 'entry', label: 'Crisis Text Line', phone: 'Text HOME to 741741', notes: '24/7 crisis support' },
     { type: 'entry', label: 'SAMHSA Helpline', phone: '1-800-662-4357', notes: 'Substance abuse & mental health' },

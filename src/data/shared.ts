@@ -6,7 +6,7 @@ export const EVENT = {
   series: 'Miami Music Week 2026',
   presenter: 'Club Space Miami',
   date: 'Saturday, March 28, 2026',
-  venue: 'Hialeah Park Casino — Racetrack Grounds',
+  venue: 'Hialeah Park Casino',
   address: '100 E 32nd St, Hialeah, FL 33013',
   phone: '(305) 885-8000',
   capacity: '10,000',
@@ -54,11 +54,11 @@ export const CREDENTIAL_MATRIX: CredentialRow[] = [
 ];
 
 export const RESOURCE_LOCATIONS: ResourceLocation[] = [
-  { resource: 'AED Defibrillator', location: 'Command Center (Clubhouse 2F), GA Entrance gate, VIP Entrance (Fountain Terrace), Medical (Paddock)', zone: 'All zones' },
+  { resource: 'AED Defibrillator', location: 'Command Center (Clubhouse 2F), Production Office, GA Entrance gate, VIP Entrance (Fountain Terrace), Medical (Paddock)', zone: 'All zones' },
   { resource: 'First Aid & Medical', location: 'North station near GA Restrooms, South station in the tunnel between VIP Dance Floor and VIP Clubhouse — EMTs + paramedics staffed', zone: 'All zones' },
   { resource: 'Fire Extinguisher (ABC)', location: 'Every 75 feet throughout footprint, every bar, kitchen, backstage, and electrical panel', zone: 'All zones' },
   { resource: 'Fire Alarm Pull Station', location: 'Every exit in Clubhouse + Casino', zone: 'Indoor' },
-  { resource: 'Spill Kit', location: 'Each bar, cleaning staging, Command Center', zone: 'Service/Ops' },
+  { resource: 'Spill Kit', location: 'Each bar, cleaning staging, Production Office', zone: 'Service/Ops' },
   { resource: 'Narcan (Naloxone)', location: 'Medical stations + roving medical', zone: 'All zones' },
   { resource: 'Earplugs (free)', location: 'First Aid stations', zone: 'All zones' },
   { resource: 'Water Fountains', location: 'Located near most grandstand restrooms throughout the venue', zone: 'All zones' },

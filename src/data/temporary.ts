@@ -5,7 +5,7 @@ const temporary: GuideConfig = {
   tier: 6,
   title: 'TEMPORARY ACCESS',
   classification: 'INTERNAL — TEMPORARY ACCESS ONLY',
-  scope: 'Deliveries, Inspectors, Contractors, Vendors, Day-of Hires',
+  scope: 'Logistics, Deliveries, Suppliers',
   icon: '🦩',
   callTime: 'Per your contact — confirm before arrival',
   hours: 'As scheduled — escort required at all times',

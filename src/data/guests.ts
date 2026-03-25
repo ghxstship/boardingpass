@@ -5,7 +5,7 @@ const guests: GuideConfig = {
   tier: 5,
   title: 'GUESTS',
   classification: '',
-  scope: 'GA, VIP, VIP Table Holders',
+  scope: 'GA, VIP, VIP Table Reservations',
   icon: '🦩',
   callTime: 'Doors at 6:00 PM',
   hours: '6:00 PM – 1:00 AM',
