@@ -65,7 +65,7 @@ const operations: GuideConfig = {
     { time: '09:30 PM', activity: 'Carlita — set begins' },
     { time: '11:30 PM', activity: 'Black Coffee — set begins (Headline)' },
     { time: '01:00 AM', activity: 'Music ends — house lights up — venue close begins' },
-    { time: '01:45 AM', activity: 'Last call — bars close' },
+    { time: '12:45 AM', activity: 'Last call — bars close' },
     { time: '02:00 AM', activity: 'Venue clear — ops strike begins' },
   ],
 

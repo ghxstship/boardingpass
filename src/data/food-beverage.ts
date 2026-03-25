@@ -41,7 +41,7 @@ const foodBeverage: GuideConfig = {
     { date: 'Fri Mar 28', time: '04:00 PM', activity: 'All bars staffed & stocked \u2014 ready for service' },
   ],
   strikeSchedule: [
-    { date: 'Sat Mar 29', time: '01:45 AM', activity: 'Last call — bars close' },
+    { date: 'Sat Mar 29', time: '12:45 AM', activity: 'Last call — bars close' },
     { date: 'Sat Mar 29', time: '02:00 AM', activity: 'Cash out, inventory, breakdown' },
     { date: 'Sat Mar 29', time: '04:00 AM', activity: 'Equipment cleaned, glassware packed, trash removed' },
     { date: 'Sat Mar 29', time: '06:00 AM', activity: 'F&B site clear' },
@@ -61,7 +61,7 @@ const foodBeverage: GuideConfig = {
     { time: '09:30 PM', activity: 'Carlita \u2014 set begins' },
     { time: '11:30 PM', activity: 'Black Coffee \u2014 set begins (Headline)' },
     { time: '01:00 AM', activity: 'Music ends — house lights up' },
-    { time: '01:45 AM', activity: 'Last call — bars close' },
+    { time: '12:45 AM', activity: 'Last call — bars close' },
     { time: '02:00 AM', activity: 'Venue clear — cash out, inventory, breakdown begins' },
   ],
 

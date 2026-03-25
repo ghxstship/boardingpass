@@ -42,7 +42,7 @@ const guests: GuideConfig = {
     { time: '9:30 PM', activity: 'Carlita' },
     { time: '11:30 PM', activity: 'Black Coffee (Headline)' },
     { time: '1:00 AM', activity: 'Music ends' },
-    { time: '1:45 AM', activity: 'Last call — bars close' },
+    { time: '12:45 AM', activity: 'Last call — bars close' },
     { time: '2:00 AM', activity: 'Venue close — time to head home' },
   ],
 
