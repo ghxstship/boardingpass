@@ -471,7 +471,15 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
             <p className="text-sm text-dark leading-relaxed">{guide.wayfinding}</p>
             <p className="text-sm text-dark leading-relaxed mt-3">{guide.credentials}</p>
             <PinkCallout>
-              <p className="text-sm text-dark font-medium">{guide.entrance}</p>
+              {guide.entrance.includes('\n') ? (
+                <div className="text-sm text-dark font-medium">
+                  {guide.entrance.split('\n').map((line, i) => (
+                    <span key={i} className={i === 0 ? 'block font-bold' : 'block'}>{line}</span>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm text-dark font-medium">{guide.entrance}</p>
+              )}
             </PinkCallout>
           </SubSection>
 

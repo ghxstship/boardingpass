@@ -25,7 +25,7 @@ const foodBeverage: GuideConfig = {
   transit: 'MetroRail Green Line to Hialeah Station (125 E 21st St). From the platform, take the pedestrian bridge over the tracks to the north side, then follow event signage through the parking lot to the Production Gate. Runs 5 AM to midnight. $2.25 per trip. MetroRail shuts down around midnight — have a rideshare plan for the way home.',
   wayfinding: 'However you arrive — by car, rideshare, or transit — follow event signage toward the venue entrances.',
   credentials: 'If you do not have your credential, proceed to the Staff Check-in lane at Guest Services (adjacent to the VIP Entrance) with valid photo ID to pick up your F&B wristband. If you already have your credential, proceed directly to the designated Staff entrance lanes at the VIP Entrance. Wear your credential visibly at all times. Lost credentials must be reported to the Production Office immediately.',
-  entrance: 'Credential Pickup Hours: 3/27 10 AM – 8 PM · 3/28 10 AM – 8 PM at Guest Services (adjacent to VIP Entrance).',
+  entrance: 'Credential Pickup Hours\nFriday, March 27 — 10 AM – 8 PM\nSaturday, March 28 — 10 AM – 8 PM\nGuest Services (adjacent to VIP Entrance)',
   additionalNotes: [
     'All F&B staff must complete TIPS (or equivalent) training before the event.',
     'No consumption of alcohol during your shift \u2014 zero tolerance.',
