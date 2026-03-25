@@ -29,7 +29,7 @@ const guests: GuideConfig = {
   additionalNotes: [
     'This is a no re-entry event. Once you leave, you can\'t come back in.',
     'Free water refill stations are at the GA Entrance, VIP area, and Paddock.',
-    'Free earplugs are available at the Medical Tent and Info Booth.',
+    'Free earplugs are available at First Aid stations.',
     'ATMs are inside the Casino building and near the Clubhouse entrance.',
   ],
 
@@ -50,10 +50,10 @@ const guests: GuideConfig = {
 
   venueAmenities: [
     'Free water refill stations (GA Entrance, VIP area, Paddock)',
-    'Free earplugs (Medical Tent + Info Booth)',
+    'Free earplugs (First Aid stations)',
     'ATMs (Casino building + Clubhouse entrance)',
     'Restrooms (GA area, VIP area, Clubhouse)',
-    'Info Booth (near GA Entrance)',
+    'Guest Services (near GA Entrance)',
     'Covered areas (Paddock, Clubhouse balcony)',
     'Smoking areas (Paddock, Crew Parking perimeter)',
     'ADA-accessible entrances, viewing areas, and restrooms',
@@ -65,7 +65,7 @@ const guests: GuideConfig = {
     'If you need help, find any staff member. They\'ll take care of you.',
     'EMTs and paramedics are on-site all night at the Medical Tent in the Paddock.',
     'AEDs and first aid kits are positioned throughout the venue.',
-    'Free earplugs are available at the Medical Tent and Info Booth — your hearing matters.',
+    'Free earplugs are available at First Aid stations — your hearing matters.',
   ],
 
   accessibilityItems: [
@@ -73,15 +73,15 @@ const guests: GuideConfig = {
     { feature: 'ADA Viewing', detail: 'Designated accessible viewing area in GA and VIP with companion seating' },
     { feature: 'ADA Restrooms', detail: 'Accessible restroom units in GA, VIP, and Clubhouse' },
     { feature: 'Service Animals', detail: 'Service animals welcome in all public areas per ADA guidelines' },
-    { feature: 'Assistance', detail: 'Need anything? Ask any staff member or visit the Info Booth near the GA Entrance.' },
+    { feature: 'Assistance', detail: 'Need anything? Ask any staff member or visit the Guest Services near the GA Entrance.' },
   ],
 
   // ── Communications ─────────────────────────────────────────────────
   commsAltContent: [
     'We\'re here to help. If you need anything, find a staff member — they\'re the ones in pink or high-vis.',
-    'The Info Booth near the GA Entrance is your go-to for questions, lost items, and general help.',
+    'The Guest Services near the GA Entrance is your go-to for questions, lost items, and general help.',
     'For medical help, tell any staff member or security guard — they\'ll call it in immediately.',
-    'If you need ADA assistance, visit the Info Booth or ask any staff member.',
+    'If you need ADA assistance, visit the Guest Services or ask any staff member.',
   ],
 
   contactsIntro: 'We\'re here to help. Here\'s how to reach us:',
@@ -126,7 +126,7 @@ const guests: GuideConfig = {
   // ── Contacts ───────────────────────────────────────────────────────
   contactDirectory: [
     { type: 'header', label: 'During the Event' },
-    { type: 'entry', label: 'Info Booth', phone: 'Near GA Entrance', notes: 'Questions, lost items, ADA assistance' },
+    { type: 'entry', label: 'Guest Services', phone: 'Near GA Entrance', notes: 'Questions, lost items, ADA assistance' },
     { type: 'entry', label: 'Medical Tent', phone: 'Paddock area', notes: 'EMTs + paramedics on-site all night' },
     { type: 'header', label: 'After the Event' },
     { type: 'entry', label: 'GHXSTSHIP Industries', phone: 'sos@ghxstship.pro', notes: 'Lost items, feedback, general inquiries' },

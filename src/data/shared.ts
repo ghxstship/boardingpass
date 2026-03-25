@@ -60,18 +60,17 @@ export const RESOURCE_LOCATIONS: ResourceLocation[] = [
   { resource: 'Fire Alarm Pull Station', location: 'Every exit in Clubhouse + Casino', zone: 'Indoor' },
   { resource: 'Spill Kit', location: 'Each bar, cleaning staging, Command Center', zone: 'Service/Ops' },
   { resource: 'Narcan (Naloxone)', location: 'Medical stations + roving medical', zone: 'All zones' },
-  { resource: 'Earplugs (free)', location: 'Medical stations + Info Booth', zone: 'Guest areas' },
+  { resource: 'Earplugs (free)', location: 'First Aid stations', zone: 'All zones' },
   { resource: 'Water Refill Station', location: 'Permanent water fountains located near all restroom facilities throughout the venue', zone: 'All zones' },
 ];
 
 export const EVACUATION_ROUTES: EvacuationRoute[] = [
-  { from: 'GA / Paddock', route: 'East via GA Entrance → Parking Lot', destination: 'Zone C Assembly' },
-  { from: 'VIP / Fountain Terrace', route: 'South via VIP Entrance → Parking Lot', destination: 'Zone C Assembly' },
-  { from: 'Backstage / Stage', route: 'North via Production Gate → E 32nd St', destination: 'Zone C Assembly' },
-  { from: 'Clubhouse (indoor)', route: 'Nearest marked exit → Parking Lot', destination: 'Zone C Assembly' },
-  { from: 'Casino Building', route: 'Nearest exit per venue fire plan', destination: 'Casino Assembly' },
-  { from: 'Parking Lot', route: 'Drive or walk to E 4th Ave exit', destination: 'Off-property' },
-  { from: 'Crew Parking', route: 'East via E 4th Ave', destination: 'Off-property' },
+  { from: 'Dance Floor', route: 'Nearest marked exit to open ground, then follow staff to assembly', destination: 'Assembly Point' },
+  { from: 'Grandstands', route: 'Descend to ground level via nearest stairway, then follow staff to assembly', destination: 'Assembly Point' },
+  { from: 'VIP Dance Floor', route: 'Nearest marked exit to open ground, then follow staff to assembly', destination: 'Assembly Point' },
+  { from: 'VIP Clubhouse', route: 'Nearest marked exit to exterior, then follow staff to assembly', destination: 'Assembly Point' },
+  { from: 'Casino', route: 'Nearest marked exit per venue fire plan, then follow staff to assembly', destination: 'Assembly Point' },
+  { from: 'Parking Lots', route: 'Proceed to nearest vehicle exit or walk to perimeter, then follow staff direction', destination: 'Off-property' },
 ];
 
 export const GUEST_FAQ: FAQPair[] = [
@@ -86,7 +85,7 @@ export const GUEST_FAQ: FAQPair[] = [
   { question: 'Is there on-site parking?', answer: 'Yes. Guest parking is available in the main Hialeah Park lots. Enter via E 4th Ave. Parking attendants will direct you. Arrive early — lots fill up.' },
   { question: 'Is this event outdoors?', answer: 'Yes. The main event takes place on the Racetrack Grounds, which is an outdoor venue. Some covered areas are available (Paddock, Clubhouse balcony), but most of the experience is open-air. Check the weather forecast and dress accordingly.' },
   { question: 'Are there ATMs on site?', answer: 'Yes. ATMs are located inside the Casino building and near the Clubhouse entrance. Standard transaction fees apply.' },
-  { question: 'What if I lose something?', answer: 'Visit the Info Booth near the GA Entrance during the event. After the event, contact sos@ghxstship.pro with a description of the lost item.' },
+  { question: 'What if I lose something?', answer: 'Visit the Guest Services near the GA Entrance during the event. After the event, contact sos@ghxstship.pro with a description of the lost item.' },
   { question: 'What if I need medical help?', answer: 'Find any staff member or security guard — they will call for medical support immediately. The Medical Tent with EMTs and paramedics is located in the Paddock area. AEDs and first aid kits are positioned throughout the venue.' },
   { question: 'Is the venue ADA accessible?', answer: 'Yes. ADA-accessible entrances, viewing areas, and restrooms are available. If you need accommodation, contact sos@ghxstship.pro before the event or ask any staff member on-site.' },
   { question: 'Can I bring a professional camera?', answer: 'Professional cameras, drones, GoPros, and recording equipment are not permitted. Phone cameras are welcome for personal use.' },

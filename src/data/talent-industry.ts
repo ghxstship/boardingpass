@@ -66,7 +66,7 @@ const talentIndustry: GuideConfig = {
     { feature: 'ADA Viewing', detail: 'Designated accessible viewing area in GA and VIP with companion seating' },
     { feature: 'ADA Restrooms', detail: 'Accessible restroom units in GA, VIP, and Clubhouse' },
     { feature: 'Service Animals', detail: 'Service animals welcome in all public areas per ADA guidelines' },
-    { feature: 'Assistance', detail: 'Staff trained for ADA assistance — ask any team member or visit Info Booth' },
+    { feature: 'Assistance', detail: 'Staff trained for ADA assistance — ask any team member or visit Guest Services' },
   ],
 
   commsAltContent: [
