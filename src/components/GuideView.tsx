@@ -21,11 +21,11 @@ const PAGE_TITLES = [
   'Before You Arrive',
   'Show Day',
   'The Experience',
-  'Safety & Security',
   'Communications',
-  'Resources',
+  'Workplace Safety',
+  'Public Safety',
   'Guest FAQ',
-  'Role Guide',
+  'Additional Info',
 ];
 
 /* ─── Helpers ─── */
@@ -747,8 +747,8 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
           <PrintButton />
         </SectionWrapper>
 
-        {/* ═══ Page 6: Safety & Security ═══ */}
-        <SectionWrapper num={6} title={guide.tier <= 3 ? 'Safety & Security' : 'Your Safety'} id="section-6">
+        {/* ═══ Page 6: Workplace Safety ═══ */}
+        <SectionWrapper num={6} title={guide.tier <= 3 ? 'Workplace Safety' : 'Your Safety'} id="section-6">
           {!guide.ppeTable && guide.safetyAltContent && guide.safetyAltContent.length > 0 && (
             <p className="text-sm text-dark leading-relaxed mb-4">{guide.safetyAltContent[0]}</p>
           )}
@@ -795,16 +795,6 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
             </SubSection>
           )}
 
-          {guide.emergencySOPs && guide.emergencySOPs.length > 0 && (
-            <SubSection title="Emergency Procedures">
-              <div className="space-y-0">
-                {guide.emergencySOPs.map((sop, i) => (
-                  <SOPCard key={i} sop={sop} />
-                ))}
-              </div>
-            </SubSection>
-          )}
-
           {guide.emergencyAltContent && guide.emergencyAltContent.length > 0 && (
             <SubSection title="In an Emergency">
               <p className="text-sm text-dark leading-relaxed mb-4">{guide.emergencyAltContent[0]}</p>
@@ -823,8 +813,18 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
           <PrintButton />
         </SectionWrapper>
 
-        {/* ═══ Page 7: Resources & Evacuation ═══ */}
-        <SectionWrapper num={7} title={guide.tier <= 3 ? 'Resources & Evacuation' : 'In Case of Emergency'} id="section-7">
+        {/* ═══ Page 7: Public Safety & Emergency Response ═══ */}
+        <SectionWrapper num={7} title={guide.tier <= 3 ? 'Public Safety & Emergency Response' : 'In Case of Emergency'} id="section-7">
+          {guide.emergencySOPs && guide.emergencySOPs.length > 0 && (
+            <SubSection title="Emergency Procedures">
+              <div className="space-y-0">
+                {guide.emergencySOPs.map((sop, i) => (
+                  <SOPCard key={i} sop={sop} />
+                ))}
+              </div>
+            </SubSection>
+          )}
+
           <SubSection title="Emergency Resource Locations">
             <DataTable
               headers={['Resource', 'Location', 'Zone']}
@@ -883,10 +883,10 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
         {/* ═══ Page 9: Role Guide + Contacts ═══ */}
         <SectionWrapper
           num={9}
-          title={guide.roleFAQTitle || (guide.tier === 5 ? 'More Info' : 'Contacts')}
+          title="Additional Information"
           id="section-9"
         >
-          {guide.tier === 5 && EVENT.eventLinks && (
+          {EVENT.eventLinks && (
             <SubSection title="Links">
               <div className="flex flex-wrap gap-3">
                 {EVENT.eventLinks.map((link, i) => (
@@ -903,47 +903,43 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
               </div>
             </SubSection>
           )}
-          {guide.tier === 5 && (
-            <SubSection title="Connect">
-              <p className="text-sm text-medium mb-4">Follow the artists and stay in the loop for future events.</p>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold w-28">Black Coffee</span>
-                  <a href="https://www.instagram.com/realblackcoffee" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@realblackcoffee</a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold w-28">Carlita</span>
-                  <a href="https://www.instagram.com/carlitamusic" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@carlitamusic</a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold w-28">Kaz James</span>
-                  <a href="https://www.instagram.com/kazjames" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@kazjames</a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold w-28">Club Space</span>
-                  <a href="https://www.instagram.com/clubspace" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@clubspace</a>
-                </div>
+          <SubSection title="Connect">
+            <p className="text-sm text-medium mb-4">Follow the artists and stay in the loop for future events.</p>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center gap-2">
+                <span className="font-semibold w-28">Black Coffee</span>
+                <a href="https://www.instagram.com/realblackcoffee" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@realblackcoffee</a>
               </div>
-            </SubSection>
-          )}
-          {guide.tier === 5 && (
-            <SubSection title="Contact">
-              <div className="space-y-2 text-sm">
-                <p>
-                  <span className="font-semibold">General inquiries:</span>{' '}
-                  <a href="mailto:info@clubspace.com" className="text-pink hover:underline">info@clubspace.com</a>
-                </p>
-                <p>
-                  <span className="font-semibold">Venue:</span>{' '}
-                  {EVENT.venue} &middot; {EVENT.address}
-                </p>
-                <p>
-                  <span className="font-semibold">Venue phone:</span>{' '}
-                  <a href={`tel:${EVENT.phone}`} className="text-pink hover:underline">{EVENT.phone}</a>
-                </p>
+              <div className="flex items-center gap-2">
+                <span className="font-semibold w-28">Carlita</span>
+                <a href="https://www.instagram.com/carlitamusic" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@carlitamusic</a>
               </div>
-            </SubSection>
-          )}
+              <div className="flex items-center gap-2">
+                <span className="font-semibold w-28">Kaz James</span>
+                <a href="https://www.instagram.com/kazjames" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@kazjames</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-semibold w-28">Club Space</span>
+                <a href="https://www.instagram.com/clubspace" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@clubspace</a>
+              </div>
+            </div>
+          </SubSection>
+          <SubSection title="Contact">
+            <div className="space-y-2 text-sm">
+              <p>
+                <span className="font-semibold">General inquiries:</span>{' '}
+                <a href="mailto:info@clubspace.com" className="text-pink hover:underline">info@clubspace.com</a>
+              </p>
+              <p>
+                <span className="font-semibold">Venue:</span>{' '}
+                {EVENT.venue} &middot; {EVENT.address}
+              </p>
+              <p>
+                <span className="font-semibold">Venue phone:</span>{' '}
+                <a href={`tel:${EVENT.phone}`} className="text-pink hover:underline">{EVENT.phone}</a>
+              </p>
+            </div>
+          </SubSection>
           {guide.roleFAQ && guide.roleFAQ.length > 0 && (
             <SubSection title={guide.roleFAQTitle || 'FAQ'}>
               <div>

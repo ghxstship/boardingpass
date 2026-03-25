@@ -18,7 +18,7 @@ const talentIndustry: GuideConfig = {
     'If you have dietary needs or allergies, notify your Liaison in advance.',
   ],
   vehicleRoute:
-    'Your Liaison will provide specific arrival instructions in advance. Artists with arranged vehicles arrive via E 32nd St with Liaison escort to backstage.',
+    'Artists arrive using the same route as VIP Tables — via E 4th Ave following event signage. Your Liaison will meet you at the VIP table entrance and escort you from there.',
   parking:
     'Artist and industry vehicles enter via E 4th Ave and follow event signage. Your Liaison will coordinate your specific parking area.',
   rideshare:
@@ -28,11 +28,11 @@ const talentIndustry: GuideConfig = {
   wayfinding:
     'Your Liaison will meet you at your arrival point — whether that\'s the rideshare drop-off, parking area, or pedestrian bridge — and escort you directly to the Green Room or VIP area.',
   credentials:
-    'Your Liaison will have your credential ready upon arrival. Artist/Touring wristband provides backstage, stage, VIP, and GA access. Industry credential provides VIP and GA access.',
+    'Your Liaison will have your credential ready upon arrival. Artist/Touring wristband provides backstage, stage, VIP, and GA access. Industry Guests and Media should proceed to Guest Services (adjacent to the VIP Entrance) for credential pickup.',
   entrance:
-    'Artists: Production Gate (E 32nd St) with Liaison escort. Industry: VIP Entrance.',
+    'Artists: VIP table entrance with Liaison escort. Industry & Media: Guest Services (adjacent to VIP Entrance) for credential pickup.',
   additionalNotes: [
-    'Your Liaison is your single point of contact for everything — requests, questions, issues.',
+    'Your Liaison is your single point of contact for everything — requests, questions, issues. Industry Guests and Media should reach out to their Liaison with any questions, concerns, or issues.',
     'Wi-Fi: GHXSTSHIP-PROD (password from your Liaison) — production network, not for streaming.',
     'The Green Room is climate-controlled with catering, beverages, and lounge seating.',
     'Photography in backstage areas is restricted — ask your Liaison before posting.',
