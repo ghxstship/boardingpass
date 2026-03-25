@@ -312,6 +312,8 @@ const foodBeverage: GuideConfig = {
     { question: 'Can I take a break?', answer: 'Yes — breaks are coordinated by your F&B lead. Just make sure you never leave your bar unattended.' },
     { question: 'What if I run out of something?', answer: 'Call for runner support on CH 15 (Bar Ops) or notify your F&B lead directly. Do not leave your station to restock on your own.' },
     { question: 'When am I done?', answer: 'Your shift ends after cash-out, inventory, and breakdown are complete. Your F&B lead will release you when everything is squared away.' },
+    { question: 'How do I cut off a guest?', answer: 'Be polite but firm. Say something like "I\'d be happy to get you some water instead." Do not argue or negotiate. If the guest becomes aggressive, step back and notify Security on CH 2 immediately. Never put yourself in a confrontational position.' },
+    { question: 'What if a guest asks about allergens?', answer: 'Take it seriously. If you are not sure about an ingredient, do not guess — check with your bar lead or the F&B Director. Common allergens include nuts, dairy, gluten, and shellfish. Never dismiss an allergy question.' },
   ],
   roleFAQTitle: 'F&B Intel',
 

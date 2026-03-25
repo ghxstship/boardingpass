@@ -16,17 +16,20 @@ import {
   EMS_STAGING,
 } from '@/data/shared';
 
-const PAGE_TITLES = [
-  'Event & Venue',
-  'Before You Arrive',
-  'Show Day',
-  'The Experience',
-  'Communications',
-  'Workplace Safety',
-  'Public Safety',
-  'Guest FAQ',
-  'Additional Info',
-];
+function getPageTitles(tier: number) {
+  const isCrew = tier <= 3;
+  return [
+    'Event & Venue',
+    'Before You Arrive',
+    isCrew ? 'Build & Show Day' : tier === 4 ? 'The Program' : tier === 5 ? 'The Night' : 'Schedule',
+    'The Experience',
+    isCrew ? 'Communications' : 'Who to Contact',
+    isCrew ? 'Workplace Safety' : 'Your Safety',
+    isCrew ? 'Public Safety' : 'Emergency',
+    'Guest FAQ',
+    'Additional Info',
+  ];
+}
 
 /* ─── Helpers ─── */
 
@@ -295,6 +298,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const pageTitles = getPageTitles(guide.tier);
   const isGuestOrTemp = guide.tier >= 5;
   const showFilteredMatrix = guide.tier === 5;
   const hideMatrix = guide.tier === 6;
@@ -328,8 +332,9 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
         {/* Page pills */}
         <div className="overflow-x-auto">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 flex gap-1.5 pb-2.5">
-            {PAGE_TITLES.map((title, i) => {
+            {pageTitles.map((title, i) => {
               const num = i + 1;
+              if (num === 8 && guide.tier === 6) return null;
               const isActive = activeSection === num;
               return (
                 <button
@@ -868,6 +873,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
         </SectionWrapper>
 
         {/* ═══ Page 8: Guest FAQ ═══ */}
+        {guide.tier !== 6 && (
         <SectionWrapper num={8} title="The Answers You Need — Guest FAQ" id="section-8">
           {guide.guestFAQIntro && (
             <p className="text-sm text-dark leading-relaxed mb-6 italic">{guide.guestFAQIntro}</p>
@@ -879,6 +885,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
           </div>
           <PrintButton />
         </SectionWrapper>
+        )}
 
         {/* ═══ Page 9: Role Guide + Contacts ═══ */}
         <SectionWrapper
@@ -886,7 +893,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
           title="Additional Information"
           id="section-9"
         >
-          {EVENT.eventLinks && (
+          {guide.tier === 5 && EVENT.eventLinks && (
             <SubSection title="Links">
               <div className="flex flex-wrap gap-3">
                 {EVENT.eventLinks.map((link, i) => (
@@ -903,6 +910,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
               </div>
             </SubSection>
           )}
+          {guide.tier === 5 && (
           <SubSection title="Connect">
             <p className="text-sm text-medium mb-4">Follow the artists and stay in the loop for future events.</p>
             <div className="space-y-3 text-sm">
@@ -924,6 +932,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
               </div>
             </div>
           </SubSection>
+          )}
           <SubSection title="Contact">
             <div className="space-y-2 text-sm">
               <p>

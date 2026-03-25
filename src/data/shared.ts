@@ -104,6 +104,9 @@ export const GUEST_FAQ: FAQPair[] = [
   { question: 'What happens if someone is too intoxicated?', answer: 'Our trained staff and security team will assess the situation compassionately. Guests who are visibly over-served will be offered water, a seat in a monitored area, and assistance arranging a safe ride home. Beverage service will be paused for that individual. We prioritize safety and dignity. Note: alcohol service is limited to guests 21+ with valid ID.' },
   { question: 'What\'s the difference between VIP and GA?', answer: 'GA (18+) gives you full access to the Dance Floor, Grandstands, and all GA bars and amenities. VIP (21+) includes everything in GA plus access to the VIP Clubhouse and VIP Dance Floor with premium bars, elevated viewing, and dedicated restrooms. VIP Table holders receive a reserved table, bottle service, and a dedicated server.' },
   { question: 'How does VIP Table service work?', answer: 'VIP Table holders receive a reserved table in the VIP Clubhouse with bottle service. Your dedicated server will be introduced upon arrival. Minimum spend requirements apply per your booking confirmation. Doors open at 6:00 PM.' },
+  { question: 'What if my wristband falls off?', answer: 'Visit Guest Services adjacent to the VIP Entrance. Bring your ID and ticket confirmation — they can issue a replacement. A replacement fee may apply.' },
+  { question: 'What if my phone dies?', answer: 'Visit Guest Services with your photo ID. They can look up your ticket and issue a replacement wristband. We recommend screenshotting your ticket in advance as a backup.' },
+  { question: 'Can my GA friends visit me in VIP?', answer: 'No. GA tickets do not grant access to VIP areas. You can meet your friends in the GA areas — your VIP credential gives you access to both GA and VIP.' },
 ];
 
 export const ASSEMBLY_POINT = 'Parking Zone C (GA Lot)';

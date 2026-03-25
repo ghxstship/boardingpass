@@ -317,6 +317,7 @@ const operations: GuideConfig = {
     { question: 'When does my shift end?', answer: 'Your shift ends when your department head releases you. Show day is a full-day call. Strike crew should expect to work until the site is clear.' },
     { question: 'Where are the restrooms for crew?', answer: 'Temporary restrooms on the north side of the footprint. Permanent restrooms on the south side and throughout the Casino and Grandstands.' },
     { question: 'What if I see something suspicious?', answer: 'Report it to Security on CH 2 immediately. Do not confront anyone — observe from a safe distance and relay as many details as you can.' },
+    { question: 'How do I handle an intoxicated guest?', answer: 'Approach with care and respect. Offer water and a seat in a monitored area. If the guest is unable to stand or is a danger to themselves or others, notify Security on CH 2. Do not physically restrain anyone. Medical and security will assess whether the guest needs transport.' },
   ],
   roleFAQTitle: 'Crew Intel',
 

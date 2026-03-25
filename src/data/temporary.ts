@@ -90,6 +90,8 @@ const temporary: GuideConfig = {
     { question: 'What if I have a problem with my delivery?', answer: 'Tell your escort. They\'ll coordinate with the Production Office.' },
     { question: 'Where are the restrooms?', answer: 'Your escort will direct you to the nearest available facility.' },
     { question: 'What\'s the speed limit on site?', answer: '5 MPH for all vehicles. No exceptions.' },
+    { question: 'What if my escort isn\'t here when I arrive?', answer: 'Wait at the Production Gate and do not enter the site. Call your GHXSTSHIP contact to check on your escort. If you cannot reach anyone, call the Production Office at the number provided in your scheduling confirmation.' },
+    { question: 'Where do I unload?', answer: 'Your escort will direct you to the appropriate unloading area. Do not unload until your escort is present and confirms the location.' },
   ],
   roleFAQTitle: 'Temporary Access FAQ',
 

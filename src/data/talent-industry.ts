@@ -35,7 +35,8 @@ const talentIndustry: GuideConfig = {
     'Your Liaison is your single point of contact for everything — requests, questions, issues. Industry Guests and Media should reach out to their Liaison with any questions, concerns, or issues.',
     'Wi-Fi: GHXSTSHIP-PROD (password from your Liaison) — production network, not for streaming.',
     'The Green Room is climate-controlled with catering, beverages, and lounge seating.',
-    'Photography in backstage areas is restricted — ask your Liaison before posting.',
+    'Photography is welcome in VIP and GA areas. Backstage and Green Room photography requires Liaison approval before posting.',
+    'Artists and touring parties may leave and return with their Liaison. The no re-entry policy applies to general admission and VIP guests only.',
   ],
 
   scheduleAltContent:
@@ -140,6 +141,11 @@ const talentIndustry: GuideConfig = {
       question: 'What time is sound check?',
       answer:
         'Per your advance schedule. Your Liaison will confirm timing and escort you to the stage.',
+    },
+    {
+      question: 'Is backline provided?',
+      answer:
+        'Per your technical rider and advance agreement. Your Liaison and the Technical Director will coordinate load-in, sound check, and backline.',
     },
   ],
   roleFAQTitle: 'Artist & Industry FAQ',
