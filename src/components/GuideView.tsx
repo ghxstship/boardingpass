@@ -882,6 +882,64 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
           title={guide.roleFAQTitle || (guide.tier === 5 ? 'More Info' : 'Contacts')}
           id="section-9"
         >
+          {guide.tier === 5 && EVENT.eventLinks && (
+            <SubSection title="Links">
+              <div className="flex flex-wrap gap-3">
+                {EVENT.eventLinks.map((link, i) => (
+                  <a
+                    key={i}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block rounded-full bg-pink px-5 py-2.5 text-sm font-bold uppercase tracking-wider text-white hover:bg-pink/80 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </SubSection>
+          )}
+          {guide.tier === 5 && (
+            <SubSection title="Connect">
+              <p className="text-body mb-4">Follow the artists and stay in the loop for future events.</p>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold w-28">Black Coffee</span>
+                  <a href="https://www.instagram.com/realblackcoffee" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@realblackcoffee</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold w-28">Carlita</span>
+                  <a href="https://www.instagram.com/carlitamusic" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@carlitamusic</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold w-28">Kaz James</span>
+                  <a href="https://www.instagram.com/kazjames" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@kazjames</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold w-28">Club Space</span>
+                  <a href="https://www.instagram.com/clubspace" target="_blank" rel="noopener noreferrer" className="text-pink hover:underline">@clubspace</a>
+                </div>
+              </div>
+            </SubSection>
+          )}
+          {guide.tier === 5 && (
+            <SubSection title="Contact">
+              <div className="space-y-2 text-sm">
+                <p>
+                  <span className="font-semibold">General inquiries:</span>{' '}
+                  <a href="mailto:info@clubspace.com" className="text-pink hover:underline">info@clubspace.com</a>
+                </p>
+                <p>
+                  <span className="font-semibold">Venue:</span>{' '}
+                  {EVENT.venue} &middot; {EVENT.address}
+                </p>
+                <p>
+                  <span className="font-semibold">Venue phone:</span>{' '}
+                  <a href={`tel:${EVENT.phone}`} className="text-pink hover:underline">{EVENT.phone}</a>
+                </p>
+              </div>
+            </SubSection>
+          )}
           {guide.roleFAQ && guide.roleFAQ.length > 0 && (
             <SubSection title={guide.roleFAQTitle || 'FAQ'}>
               <div>
@@ -897,21 +955,6 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
 
       {/* ─── Footer ─── */}
       <footer className="border-t border-border py-8 text-center print-hide">
-        {guide.tier === 5 && EVENT.eventLinks && (
-          <div className="mb-6 flex flex-wrap justify-center gap-3">
-            {EVENT.eventLinks.map((link, i) => (
-              <a
-                key={i}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block rounded-full bg-pink px-5 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-pink/80 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        )}
         <p className="text-xs text-light mt-1">
           {EVENT.venue} &middot; {EVENT.address}
         </p>
