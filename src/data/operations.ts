@@ -25,7 +25,7 @@ const operations: GuideConfig = {
   transit: 'MetroRail Green Line to Hialeah Station (125 E 21st St). From the platform, take the pedestrian bridge over the tracks to the north side, then follow event signage through the parking lot to the Production Gate. Runs 5 AM to midnight. $2.25 per trip. MetroRail shuts down around midnight — have a rideshare plan for the way home.',
   wayfinding: 'However you arrive — by car, rideshare, or transit — follow event signage toward the venue entrances.',
   credentials: 'If you do not have your credential, proceed to the Staff Check-in lane at Guest Services (adjacent to the VIP Entrance) with valid photo ID to pick up your wristband. If you already have your credential, proceed directly to the designated Staff entrance lanes at the VIP Entrance. Wear your credential visibly at all times.',
-  entrance: 'Staff without credentials: Staff Check-in lane at Guest Services. Staff with credentials: Staff entrance lanes at VIP entrance.',
+  entrance: 'Credential Pickup Hours: 3/27 10 AM – 8 PM · 3/28 10 AM – 8 PM at Guest Services (adjacent to VIP Entrance).',
   additionalNotes: [
     'Cell service unreliable during peak hours, rely on radios.',
     'No personal vehicles beyond Crew Parking.',
