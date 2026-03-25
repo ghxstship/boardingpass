@@ -54,7 +54,7 @@ export const CREDENTIAL_MATRIX: CredentialRow[] = [
 ];
 
 export const RESOURCE_LOCATIONS: ResourceLocation[] = [
-  { resource: 'AED Defibrillator', location: 'Command Center (Clubhouse 2F), Production Office, GA Entrance gate, VIP Entrance (Fountain Terrace), Medical (Paddock)', zone: 'All zones' },
+  { resource: 'AED Defibrillator', location: 'Command Center (Clubhouse 2F), Production Office, GA Entrance gate, VIP Entrance, Medical (Paddock)', zone: 'All zones' },
   { resource: 'First Aid & Medical', location: 'North station near GA Restrooms, South station in the tunnel between VIP Dance Floor and VIP Clubhouse — EMTs + paramedics staffed', zone: 'All zones' },
   { resource: 'Fire Extinguisher (ABC)', location: 'Every 75 feet throughout footprint, every bar, kitchen, backstage, and electrical panel', zone: 'All zones' },
   { resource: 'Fire Alarm Pull Station', location: 'Every exit in Clubhouse + Casino', zone: 'Indoor' },
@@ -92,8 +92,8 @@ export const GUEST_FAQ: FAQPair[] = [
   { question: 'Is there a smoking area?', answer: 'Yes. Designated smoking areas are located in the Paddock and near the Crew Parking perimeter. Smoking is not permitted inside any building or in the main GA/VIP areas.' },
   { question: 'What items are prohibited?', answer: 'Prohibited items include: weapons or sharp objects, illegal substances, outside food or beverages, professional cameras or recording equipment, drones, laser pointers, fireworks or flares, large bags or backpacks, chairs or blankets, glass containers, and any item deemed a safety risk by security.' },
   { question: 'What happens if someone is too intoxicated?', answer: 'Our trained staff and security team will assess the situation compassionately. Guests who are visibly over-served will be offered water, a seat in a monitored area, and assistance arranging a safe ride home. Beverage service will be paused for that individual. We prioritize safety and dignity. Note: alcohol service is limited to guests 21+ with valid ID.' },
-  { question: 'What\'s the difference between VIP and GA?', answer: 'GA (18+) gives you full access to the Racetrack Grounds, Paddock viewing area, and all GA bars and amenities. VIP (21+) includes everything in GA plus access to the Fountain Terrace VIP area with premium bars, elevated viewing, and dedicated restrooms. VIP Table holders receive a reserved table, bottle service, and a dedicated server in the Fountain Terrace.' },
-  { question: 'How does VIP Table service work?', answer: 'VIP Table holders receive a reserved table in the Fountain Terrace with bottle service. Your dedicated server will be introduced upon arrival. Minimum spend requirements apply per your booking confirmation. Doors open at 6:00 PM.' },
+  { question: 'What\'s the difference between VIP and GA?', answer: 'GA (18+) gives you full access to the Racetrack Grounds, Paddock viewing area, and all GA bars and amenities. VIP (21+) includes everything in GA plus access to the VIP Clubhouse and VIP Dance Floor with premium bars, elevated viewing, and dedicated restrooms. VIP Table holders receive a reserved table, bottle service, and a dedicated server in the VIP Clubhouse.' },
+  { question: 'How does VIP Table service work?', answer: 'VIP Table holders receive a reserved table in the VIP Clubhouse with bottle service. Your dedicated server will be introduced upon arrival. Minimum spend requirements apply per your booking confirmation. Doors open at 6:00 PM.' },
 ];
 
 export const ASSEMBLY_POINT = 'Parking Zone C (GA Lot)';

@@ -143,7 +143,7 @@ const foodBeverage: GuideConfig = {
         'If the patient is unresponsive, begin CPR if trained. Locate nearest AED.',
         'Production Manager notifies Executive Producer. Stage Manager assesses whether show continues.',
       ],
-      note: 'AEDs are located at: Command Center (Clubhouse 2F), Production Office, GA Entrance gate, VIP Entrance (Fountain Terrace), and Medical (Paddock).',
+      note: 'AEDs are located at: Command Center (Clubhouse 2F), Production Office, GA Entrance gate, VIP Entrance, and Medical (Paddock).',
     },
     {
       title: 'Burglary or Theft',
@@ -311,8 +311,6 @@ const foodBeverage: GuideConfig = {
   roleFAQTitle: 'F&B Intel',
 
   contactDirectory: [
-    { type: 'header', label: 'Event Producer' },
-    { type: 'entry', label: 'GHXSTSHIP Industries', phone: 'sos@ghxstship.pro', notes: 'Executive Producer \u2014 escalation line' },
     { type: 'header', label: 'Venue' },
     { type: 'entry', label: 'Hialeah Park Casino', phone: '(305) 885-8000', notes: 'Main venue line \u2014 not for production use during event' },
     { type: 'header', label: 'Emergency Services' },

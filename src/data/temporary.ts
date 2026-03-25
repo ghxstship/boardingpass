@@ -97,8 +97,6 @@ const temporary: GuideConfig = {
     { type: 'header', label: 'On-Site' },
     { type: 'entry', label: 'Production Gate', phone: 'E 32nd St', notes: 'Check-in point for all temporary access' },
     { type: 'entry', label: 'Production Office', phone: 'Clubhouse 2F', notes: 'Escalation for delivery or access issues' },
-    { type: 'header', label: 'Event Producer' },
-    { type: 'entry', label: 'GHXSTSHIP Industries', phone: 'sos@ghxstship.pro', notes: 'Pre-arrange access or schedule changes' },
     { type: 'header', label: 'Emergency' },
     { type: 'entry', label: 'Police / Fire / EMS', phone: '911', notes: 'Life-threatening emergencies' },
   ],

@@ -30,7 +30,7 @@ const talentIndustry: GuideConfig = {
   credentials:
     'Your Liaison will have your credential ready upon arrival. Artist/Touring wristband provides backstage, stage, VIP, and GA access. Industry credential provides VIP and GA access.',
   entrance:
-    'Artists: Production Gate (E 32nd St) with Liaison escort. Industry: VIP Entrance (Fountain Terrace).',
+    'Artists: Production Gate (E 32nd St) with Liaison escort. Industry: VIP Entrance.',
   additionalNotes: [
     'Your Liaison is your single point of contact for everything — requests, questions, issues.',
     'Wi-Fi: GHXSTSHIP-PROD (password from your Liaison) — production network, not for streaming.',
@@ -52,7 +52,7 @@ const talentIndustry: GuideConfig = {
 
   venueAmenities: [
     'Green Room — Climate-controlled backstage lounge with catering and beverages.',
-    'VIP Access — Full access to the Fountain Terrace VIP area with premium bars.',
+    'VIP Access — Full access to the VIP Clubhouse and VIP Dance Floor with premium bars.',
     'Water Fountains — Located near most grandstand restrooms.',
     'Restrooms — Accessible in all VIP and backstage areas.',
     'Medical — EMTs and paramedics staffed throughout the event.',
@@ -157,13 +157,6 @@ const talentIndustry: GuideConfig = {
       label: 'Hialeah Park Casino',
       phone: '(305) 885-8000',
       notes: 'Main venue line',
-    },
-    { type: 'header', label: 'Event Producer' },
-    {
-      type: 'entry',
-      label: 'GHXSTSHIP Industries',
-      phone: 'sos@ghxstship.pro',
-      notes: 'Executive Producer',
     },
     { type: 'header', label: 'Emergency Services' },
     {
