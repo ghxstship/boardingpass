@@ -19,10 +19,10 @@ export const EVENT = {
     { label: 'Tickets', url: 'https://dice.fm/event/7dpg36-black-coffee-carlita-kaz-james-at-the-racetrack-mmw-26-28th-mar-club-space-miami-miami-hialeah-park-casino-hialeah-tickets?lng=en-US' },
   ],
   socials: {
-    instagram: 'https://www.instagram.com/ghxstship',
+    instagram: 'https://www.instagram.com/ghxstship.tours',
     linkedin: 'https://www.linkedin.com/company/ghxstship',
     youtube: 'https://www.youtube.com/@ghxstship',
-    website: 'https://ghxstship.pro',
+    website: 'https://ghxstship.tours',
   },
 };
 
