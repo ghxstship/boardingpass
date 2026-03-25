@@ -50,11 +50,11 @@ const guests: GuideConfig = {
     'Water Fountains — Located near most grandstand restrooms. Bring your reusable bottle.',
     'Earplugs — Free earplugs available at First Aid stations. Your hearing matters.',
     'ATMs — Located inside the Casino building and near the Clubhouse entrance.',
-    'Restrooms — Available in the GA area, VIP area, and Clubhouse. ADA-accessible units in all locations.',
+    'Restrooms — Temporary restrooms on the north side of the footprint. Permanent restrooms on the south side and throughout the Casino and Grandstands. ADA-accessible units in all locations.',
     'Guest Services — Adjacent to the VIP Entrance for questions, lost items, and ADA assistance.',
     'Covered Areas — The Paddock and Clubhouse balcony offer shelter from sun and weather.',
     'Smoking Areas — Designated areas in the Paddock and near the Crew Parking perimeter. No smoking inside any building or in the main GA/VIP areas.',
-    'Food & Drink — Full bar service with craft cocktails, beer, wine, and non-alcoholic options. GA is 18+, alcohol service is 21+ with valid ID. VIP Table holders receive dedicated bottle service.',
+    'Food & Drink — Food vendors on the north side of the footprint and bars throughout. Full bar service with craft cocktails, beer, wine, and non-alcoholic options. GA is 18+, alcohol service is 21+ with valid ID. VIP Table holders receive dedicated bottle service.',
     'Charging — Portable chargers are welcome. Keep your phone charged for your ticket and rideshare home.',
   ],
 

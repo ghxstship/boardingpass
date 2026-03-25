@@ -57,10 +57,10 @@ const foodBeverage: GuideConfig = {
   ],
 
   venueAmenities: [
-    'Craft Services — Ground floor of the Clubhouse. Meals and snacks available throughout the day.',
+    'Craft Services — Not provided for this production. Plan your own meals and snacks. Food vendors are located on the north side of the footprint during show hours.',
     'Crew Break Area — Clubhouse second-floor lounge. Climate-controlled with seating.',
     'Water Fountains — Located near most grandstand restrooms. Bring your reusable bottle.',
-    'Restrooms — Crew restroom trailers near Crew Parking, plus Clubhouse ground floor facilities.',
+    'Restrooms — Temporary restrooms on the north side of the footprint. Permanent restrooms available on the south side and throughout the Casino and Grandstands.',
     'Medical — EMTs and paramedics staffed at the Medical Tent in the Paddock from load-in through strike.',
     'Earplugs — Free at First Aid stations.',
   ],
@@ -305,7 +305,7 @@ const foodBeverage: GuideConfig = {
     { question: 'How do tips work?', answer: 'Tips are pooled per bar assignment. Your F&B lead explains the structure at pre-shift.' },
     { question: 'What if a guest is too drunk?', answer: 'Cut them off politely but firmly. Notify your bar lead and Security (CH 7). Offer water and help arrange a ride.' },
     { question: 'What if someone gets hurt at my bar?', answer: 'Call \u201CCode Blue\u201D on CH 9. Clear the area. Do not move the person unless they\u2019re in danger.' },
-    { question: 'Where are the restrooms for staff?', answer: 'Clubhouse ground floor and crew restroom trailers near Crew Parking.' },
+    { question: 'Where are the restrooms for staff?', answer: 'Temporary restrooms on the north side of the footprint. Permanent restrooms on the south side and throughout the Casino and Grandstands.' },
     { question: 'Can I take a break?', answer: 'Breaks are coordinated by your F&B lead. Never leave your bar unattended.' },
     { question: 'What if I run out of something?', answer: 'Radio CH 10 for runner support or notify your F&B lead.' },
     { question: 'When am I done?', answer: 'After cash-out, inventory, and breakdown. Your F&B lead releases you.' },
