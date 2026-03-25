@@ -47,11 +47,12 @@ const talentIndustry: GuideConfig = {
     { time: '07:00 PM', activity: 'Kaz James — set begins' },
     { time: '09:30 PM', activity: 'Carlita — set begins' },
     { time: '11:30 PM', activity: 'Black Coffee — set begins (Headline)' },
+    { time: '12:45 AM', activity: 'Last call — bars close' },
     { time: '01:00 AM', activity: 'Music ends — event close' },
   ],
 
   venueAmenities: [
-    'Green Room — Climate-controlled backstage lounge with catering and beverages.',
+    'Green Room — Clubhouse 3F. Climate-controlled lounge with catering and beverages.',
     'VIP Access — Full access to the VIP Clubhouse and VIP Dance Floor with premium bars.',
     'Water Fountains — Located near most grandstand restrooms.',
     'Restrooms — Accessible in all VIP and backstage areas.',
@@ -63,7 +64,7 @@ const talentIndustry: GuideConfig = {
     'Your safety is our priority. Your Liaison is your first point of contact for any concern.',
     'If you feel unsafe at any time, tell your Liaison or any crew member immediately.',
     'If you hear an emergency announcement, follow your Liaison\'s instructions.',
-    'The Medical Tent is staffed with EMTs and paramedics throughout the event.',
+    'Medical stations with EMTs and paramedics are staffed throughout the event.',
     'If someone near you needs medical help, alert your Liaison or call out to any crew member.',
   ],
 
@@ -103,7 +104,7 @@ const talentIndustry: GuideConfig = {
     {
       question: 'Where is the Green Room?',
       answer:
-        'Your Liaison will escort you. It\'s backstage in a climate-controlled area with catering and lounge seating.',
+        'The Green Room is on the third floor of the Clubhouse. Your Liaison will escort you. It\'s climate-controlled with catering and lounge seating.',
     },
     {
       question: 'What\'s the Wi-Fi?',
@@ -118,7 +119,7 @@ const talentIndustry: GuideConfig = {
     {
       question: 'What if I need medical attention?',
       answer:
-        'Tell your Liaison immediately. The Medical Tent has EMTs and paramedics. For emergencies, any crew member can call for help.',
+        'Tell your Liaison immediately. Medical stations have EMTs and paramedics. For emergencies, any crew member can call for help.',
     },
     {
       question: 'How many people are in my touring party credential?',

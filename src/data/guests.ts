@@ -51,8 +51,8 @@ const guests: GuideConfig = {
     'ATMs — Located inside the Casino building and near the Clubhouse entrance.',
     'Restrooms — Temporary restrooms on the north side of the footprint. Permanent restrooms on the south side and throughout the Casino and Grandstands. ADA-accessible units in all locations.',
     'Guest Services — Adjacent to the VIP Entrance for questions, lost items, and ADA assistance.',
-    'Covered Areas — The Paddock and Clubhouse balcony offer shelter from sun and weather.',
-    'Smoking Areas — Designated areas in the Paddock and near the Crew Parking perimeter. No smoking inside any building or in the main GA/VIP areas.',
+    'Covered Areas — The Clubhouse and Casino offer shelter from sun and weather.',
+    'Smoking Areas — Designated areas near the Crew Parking perimeter. No smoking inside any building or in the GA or VIP areas.',
     'Food & Drink — Food vendors on the north side of the footprint and bars throughout. Full bar service with craft cocktails, beer, wine, and non-alcoholic options. GA is 18+, alcohol service is 21+ with valid ID. VIP Table holders receive dedicated bottle service.',
     'Charging — Portable chargers are welcome. Keep your phone charged for your ticket and rideshare home.',
   ],
@@ -61,7 +61,7 @@ const guests: GuideConfig = {
   safetyAltContent: [
     'We\'ve got a full team looking out for you — security, medical, and event staff are everywhere.',
     'If you need help, find any staff member. They\'ll take care of you.',
-    'EMTs and paramedics are on-site all night at the Medical Tent in the Paddock.',
+    'Medical stations with EMTs and paramedics are staffed all night on the north side and between the VIP Dance Floor and VIP Clubhouse.',
     'AEDs and first aid kits are positioned throughout the venue.',
     'Free earplugs are available at First Aid stations — your hearing matters.',
   ],
@@ -124,7 +124,7 @@ const guests: GuideConfig = {
   contactDirectory: [
     { type: 'header', label: 'During the Event' },
     { type: 'entry', label: 'Guest Services', phone: 'Adjacent to VIP Entrance', notes: 'Questions, lost items, ADA assistance' },
-    { type: 'entry', label: 'Medical Tent', phone: 'Paddock area', notes: 'EMTs + paramedics on-site all night' },
+    { type: 'entry', label: 'Medical Stations', phone: 'North side + VIP tunnel', notes: 'EMTs + paramedics on-site all night' },
     { type: 'header', label: 'Emergency' },
     { type: 'entry', label: 'Police / Fire / EMS', phone: '911', notes: 'Life-threatening emergencies' },
     { type: 'entry', label: 'Poison Control', phone: '1-800-222-1222', notes: '24/7 hotline' },

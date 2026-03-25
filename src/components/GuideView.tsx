@@ -420,20 +420,24 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
               </div>
             </SubSection>
 
-            <SubSection title="Schedule">
-              <div className="space-y-1.5">
-                {SCHEDULE.map((s, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <span className="text-sm text-dark w-36 shrink-0">{s.label}</span>
-                    <span className="font-mono text-xs text-pink">{s.datetime}</span>
-                  </div>
-                ))}
-              </div>
-            </SubSection>
+            {guide.tier <= 4 && (
+              <SubSection title="Schedule">
+                <div className="space-y-1.5">
+                  {SCHEDULE.map((s, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <span className="text-sm text-dark w-36 shrink-0">{s.label}</span>
+                      <span className="font-mono text-xs text-pink">{s.datetime}</span>
+                    </div>
+                  ))}
+                </div>
+              </SubSection>
+            )}
 
-            <SubSection title="Daily Hours of Operation">
-              <p className="font-mono text-sm text-dark">{DAILY_HOURS}</p>
-            </SubSection>
+            {guide.tier <= 4 && (
+              <SubSection title="Daily Hours of Operation">
+                <p className="font-mono text-sm text-dark">{DAILY_HOURS}</p>
+              </SubSection>
+            )}
           </div>
           <PrintButton />
         </SectionWrapper>
@@ -605,7 +609,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
                 <DataTable
                   headers={[
                     'Credential',
-                    'Grandstands (GA)',
+                    <span key="ga">{'GA'}<br />{'Grandstands + Dance Floor'}</span>,
                     'VIP Dance Floor',
                     'VIP Clubhouse',
                     <span key="vt-gd">VIP Tables<br />Grandstand</span>,
@@ -629,7 +633,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
                 <DataTable
                   headers={[
                     'Credential',
-                    'Grandstands (GA)',
+                    <span key="ga">{'GA'}<br />{'Grandstands + Dance Floor'}</span>,
                     'VIP Dance Floor',
                     'VIP Clubhouse',
                     <span key="vt-gd">VIP Tables<br />Grandstand</span>,
@@ -744,7 +748,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
         </SectionWrapper>
 
         {/* ═══ Page 6: Communications / Who to Contact ═══ */}
-        <SectionWrapper num={6} title={guide.tier <= 3 ? 'Stay Connected' : 'Who to Contact'} id="section-6">
+        <SectionWrapper num={6} title={guide.tier <= 3 ? 'Communications' : 'Who to Contact'} id="section-6">
           {guide.radioChannels && guide.radioChannels.length > 0 && (
             <>
               <SubSection title="Radio Channel Matrix">
@@ -820,7 +824,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
         </SectionWrapper>
 
         {/* ═══ Page 7: Resources & Evacuation ═══ */}
-        <SectionWrapper num={7} title="Help Is Here — Resources & Evacuation" id="section-7">
+        <SectionWrapper num={7} title={guide.tier <= 3 ? 'Resources & Evacuation' : 'In Case of Emergency'} id="section-7">
           <SubSection title="Emergency Resource Locations">
             <DataTable
               headers={['Resource', 'Location', 'Zone']}
@@ -901,7 +905,7 @@ export default function GuideView({ guide }: { guide: GuideConfig }) {
           )}
           {guide.tier === 5 && (
             <SubSection title="Connect">
-              <p className="text-body mb-4">Follow the artists and stay in the loop for future events.</p>
+              <p className="text-sm text-medium mb-4">Follow the artists and stay in the loop for future events.</p>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-2">
                   <span className="font-semibold w-28">Black Coffee</span>

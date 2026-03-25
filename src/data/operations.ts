@@ -11,13 +11,13 @@ const operations: GuideConfig = {
   hours: 'Build: Mar 27–28 · Show Day: 4:00 PM – 2:00 AM · Strike: Immediate',
 
   preArrival: [
-    'Confirm your department call time.',
-    'Bring valid photo ID.',
-    'Wear closed-toe shoes and comfortable clothing for long shifts.',
-    'Security and parking staff: high-vis vest required.',
-    'Apply sunscreen, bring water.',
-    'Charge your radio.',
-    'Review the site plan.',
+    'Confirm your department call time with your lead — not all departments start at the same time.',
+    'Bring valid photo ID. You will not be credentialed without it.',
+    'Wear closed-toe shoes and comfortable clothing for long shifts on your feet.',
+    'Security and parking staff: high-vis vest is required at all times on site.',
+    'Apply sunscreen before you arrive and bring water — you\'ll be outdoors for extended periods.',
+    'Charge your radio and confirm your assigned channel with your department head.',
+    'Review the site plan before arrival: it will save you time on the ground.',
   ],
   vehicleRoute: 'Enter via E 4th Ave and follow event signage to your designated parking zone.',
   parking: 'Crew parking is accessible via E 4th Ave — the same route as guest parking. Follow the event signage and park in the zone corresponding to your issued parking pass. Display your parking pass on the dashboard at all times. Unauthorized vehicles will be towed.',
@@ -61,7 +61,7 @@ const operations: GuideConfig = {
     'Crew Break Area — Clubhouse second-floor lounge. Climate-controlled with seating.',
     'Water Fountains — Located near most grandstand restrooms. Bring your reusable bottle.',
     'Restrooms — Temporary restrooms on the north side of the footprint. Permanent restrooms available on the south side and throughout the Casino and Grandstands.',
-    'Medical — EMTs and paramedics staffed at the Medical Tent in the Paddock from load-in through strike.',
+    'Medical — EMTs and paramedics staffed at medical stations on the north side and between the VIP Dance Floor and VIP Clubhouse, from load-in through strike.',
     'Earplugs — Free at First Aid stations. Recommended near the main PA during tuning and show.',
   ],
 
@@ -149,7 +149,7 @@ const operations: GuideConfig = {
         'If the patient is unresponsive, begin CPR if trained. Locate nearest AED.',
         'Production Manager notifies Executive Producer. Stage Manager assesses whether show continues.',
       ],
-      note: 'AEDs are located at: Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, and Medical (Paddock).',
+      note: 'AEDs are located at: Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, and Medical (north station).',
     },
     {
       title: 'Burglary or Theft',

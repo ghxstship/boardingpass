@@ -61,7 +61,7 @@ const foodBeverage: GuideConfig = {
     'Crew Break Area — Clubhouse second-floor lounge. Climate-controlled with seating.',
     'Water Fountains — Located near most grandstand restrooms. Bring your reusable bottle.',
     'Restrooms — Temporary restrooms on the north side of the footprint. Permanent restrooms available on the south side and throughout the Casino and Grandstands.',
-    'Medical — EMTs and paramedics staffed at the Medical Tent in the Paddock from load-in through strike.',
+    'Medical — EMTs and paramedics staffed at medical stations on the north side and between the VIP Dance Floor and VIP Clubhouse, from load-in through strike.',
     'Earplugs — Free at First Aid stations. Recommended near the main PA during tuning and show.',
   ],
 
@@ -145,7 +145,7 @@ const foodBeverage: GuideConfig = {
         'If the patient is unresponsive, begin CPR if trained. Locate nearest AED.',
         'Production Manager notifies Executive Producer. Stage Manager assesses whether show continues.',
       ],
-      note: 'AEDs are located at: Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, and Medical (Paddock).',
+      note: 'AEDs are located at: Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, and Medical (north station).',
     },
     {
       title: 'Burglary or Theft',

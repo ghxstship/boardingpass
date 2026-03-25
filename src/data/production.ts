@@ -65,7 +65,7 @@ const production: GuideConfig = {
     'Crew Break Area — Clubhouse second-floor lounge. Climate-controlled with seating.',
     'Water Fountains — Located near most grandstand restrooms. Bring your reusable bottle.',
     'Restrooms — Temporary restrooms on the north side of the footprint. Permanent restrooms available on the south side and throughout the Casino and Grandstands.',
-    'Medical — EMTs and paramedics staffed at the Medical Tent in the Paddock from load-in through strike.',
+    'Medical — EMTs and paramedics staffed at medical stations on the north side and between the VIP Dance Floor and VIP Clubhouse, from load-in through strike.',
     'Earplugs — Free at First Aid stations. Recommended near the main PA during tuning and show.',
   ],
 
@@ -153,7 +153,7 @@ const production: GuideConfig = {
         'If the patient is unresponsive, begin CPR if trained. Locate nearest AED.',
         'Production Manager notifies Executive Producer. Stage Manager assesses whether show continues.',
       ],
-      note: 'AEDs are located at: Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, and Medical (Paddock).',
+      note: 'AEDs are located at: Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, and Medical (north station).',
     },
     {
       title: 'Burglary or Theft',
@@ -317,7 +317,7 @@ const production: GuideConfig = {
     { question: 'What if it rains?', answer: 'The show is outdoor and proceeds in light rain. In severe weather (lightning, high winds), the Production Manager will call a weather hold or evacuation. Follow instructions on CH 1 (Emergency).' },
     { question: 'When does my shift end?', answer: 'Your shift ends when your department head releases you. Show day is a full-day call. Strike crew should expect to work until the site is clear.' },
     { question: 'Is there a quiet area or break space?', answer: 'The Clubhouse second-floor lounge is available as a break area for crew. It\'s climate-controlled and has seating. Please keep it clean.' },
-    { question: 'What if I have a medical condition my team should know about?', answer: 'Disclose any relevant medical information to the Production Office and your department head confidentially. The Medical Tent has EMTs and paramedics on-site from load-in through strike.' },
+    { question: 'What if I have a medical condition my team should know about?', answer: 'Disclose any relevant medical information to the Production Office and your department head confidentially. Medical stations have EMTs and paramedics on-site from load-in through strike.' },
   ],
   roleFAQTitle: 'Crew Intel',
 
