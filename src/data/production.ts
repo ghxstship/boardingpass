@@ -28,7 +28,7 @@ const production: GuideConfig = {
   entrance: 'Credential Pickup Hours\nFriday, March 27 — 10 AM – 8 PM\nSaturday, March 28 — 10 AM – 8 PM\nClubhouse Entrance (next to VIP Tables)',
   additionalNotes: [
     'Cell service will be unreliable during peak hours. Rely on radios for all operational communication.',
-    'The Command Center and Production Office are located in the Turf Lounge on the ground floor of the VIP Clubhouse, accessible through the Clubhouse Entrance. The Command Center is restricted to Core credential holders and public safety leadership only. For admin, radios, and crew services, report to the Production Office.',
+    'The Command Center and Production Office are located in the Turf Lounge on the ground floor of the VIP Clubhouse, accessible through the Clubhouse Entrance. The Green Room is on the third floor of the Clubhouse. The Command Center is restricted to Core credential holders and public safety leadership only. For admin, radios, and crew services, report to the Production Office.',
     'The Clubhouse is a historic building. Do not drill, nail, screw, or tape into any original surfaces without explicit approval from the Venue Liaison.',
     'No personal vehicles are permitted beyond your assigned parking zone. All gear moves via hand cart or approved production vehicle only.',
     'Pets, personal guests, and children are not permitted in production areas at any time.',
