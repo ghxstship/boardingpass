@@ -65,7 +65,7 @@ export const CREDENTIAL_MATRIX: CredentialRow[] = [
 ];
 
 export const RESOURCE_LOCATIONS: ResourceLocation[] = [
-  { resource: 'AED Defibrillator', location: 'Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, Medical (north station)', zone: 'All zones' },
+  { resource: 'AED Defibrillator', location: 'Command Center (Turf Lounge), Production Office, GA Entrance gate, VIP Entrance, Medical (north station)', zone: 'All zones' },
   { resource: 'First Aid & Medical', location: 'North station near food vendors, south station between VIP Dance Floor and VIP Clubhouse — EMTs + paramedics staffed', zone: 'All zones' },
   { resource: 'Fire Extinguisher (ABC)', location: 'Every 75 feet throughout footprint, every bar, kitchen, backstage, and electrical panel', zone: 'All zones' },
   { resource: 'Fire Alarm Pull Station', location: 'Every exit in Clubhouse + Casino', zone: 'Indoor' },
@@ -81,7 +81,7 @@ export const EVACUATION_ROUTES: EvacuationRoute[] = [
   { from: 'VIP Dance Floor', route: 'West through VIP Entrance, south along venue perimeter', destination: 'Parking Zone C' },
   { from: 'VIP Clubhouse', route: 'Nearest Clubhouse exit to exterior, south along venue perimeter', destination: 'Parking Zone C' },
   { from: 'Casino', route: 'Nearest Casino exit per venue fire plan, south toward E 4th Ave', destination: 'Parking Zone C' },
-  { from: 'Clubhouse 3F (Crew)', route: 'Down nearest stairway, exit Clubhouse, south along venue perimeter', destination: 'Parking Zone C' },
+  { from: 'Turf Lounge (Crew)', route: 'Exit through Clubhouse Entrance, south along venue perimeter', destination: 'Parking Zone C' },
 ];
 
 export const GUEST_FAQ: FAQPair[] = [

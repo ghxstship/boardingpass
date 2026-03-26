@@ -28,7 +28,7 @@ const production: GuideConfig = {
   entrance: 'Credential Pickup Hours\nFriday, March 27 — 10 AM – 8 PM\nSaturday, March 28 — 10 AM – 8 PM\nClubhouse Entrance (next to VIP Tables)',
   additionalNotes: [
     'Cell service will be unreliable during peak hours. Rely on radios for all operational communication.',
-    'The Command Center, Production Office, and Green Room are all located on the third floor of the Clubhouse. The Command Center is restricted to Core credential holders and public safety leadership only. For admin, radios, and crew services, report to the Production Office.',
+    'The Command Center and Production Office are located in the Turf Lounge on the ground floor of the VIP Clubhouse, accessible through the Clubhouse Entrance. The Command Center is restricted to Core credential holders and public safety leadership only. For admin, radios, and crew services, report to the Production Office.',
     'The Clubhouse is a historic building. Do not drill, nail, screw, or tape into any original surfaces without explicit approval from the Venue Liaison.',
     'No personal vehicles are permitted beyond your assigned parking zone. All gear moves via hand cart or approved production vehicle only.',
     'Pets, personal guests, and children are not permitted in production areas at any time.',
@@ -170,7 +170,7 @@ const production: GuideConfig = {
         'If the patient is unresponsive, begin CPR if trained. Locate nearest AED.',
         'Production Manager notifies Executive Producer. Stage Manager assesses whether show continues.',
       ],
-      note: 'AEDs are located at: Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, and Medical (north station).',
+      note: 'AEDs are located at: Command Center (Turf Lounge), Production Office, GA Entrance gate, VIP Entrance, and Medical (north station).',
     },
     {
       title: 'Structural Damage or Equipment Failure',
@@ -310,7 +310,7 @@ const production: GuideConfig = {
   guestFAQIntro: 'Every member of this team should be able to answer the most common guest questions confidently and accurately.',
 
   roleFAQ: [
-    { question: 'Where is the Production Office?', answer: 'The Production Office is on the third floor of the Clubhouse, in the same area as the Command Center and Green Room. The Production Office handles admin, crew services, and radio distribution. The Command Center is separate and restricted to Core credential holders and public safety leadership.' },
+    { question: 'Where is the Production Office?', answer: 'The Production Office is in the Turf Lounge on the ground floor of the VIP Clubhouse, accessible through the Clubhouse Entrance. The Command Center is in the same room. The Production Office handles admin, crew services, and radio distribution. The Command Center is separate and restricted to Core credential holders and public safety leadership.' },
     { question: 'Where do I pick up my radio?', answer: 'Radios are distributed at the Production Office during check-in. Return your radio to the Production Office at the end of your shift or at strike. You are responsible for your assigned radio.' },
     { question: 'What\'s the Wi-Fi?', answer: 'Network: BCProduction · Password: coffeeBlack!! — Do not share with guests. This is a production network — not for streaming.' },
     { question: 'Is there craft services?', answer: 'No. This production does not offer craft services. Plan your own meals and snacks. Food vendors will be available on the north side of the footprint during show hours.' },

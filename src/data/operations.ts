@@ -166,7 +166,7 @@ const operations: GuideConfig = {
         'If the patient is unresponsive, begin CPR if trained. Locate the nearest AED.',
         'Production Manager notifies Executive Producer. Stage Manager assesses whether the show continues.',
       ],
-      note: 'AEDs are located at: Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, and Medical (north station).',
+      note: 'AEDs are located at: Command Center (Turf Lounge), Production Office, GA Entrance gate, VIP Entrance, and Medical (north station).',
     },
     {
       title: 'Structural Damage or Equipment Failure',
@@ -306,7 +306,7 @@ const operations: GuideConfig = {
   guestFAQIntro: 'Every member of this team should be able to answer the most common guest questions confidently and accurately.',
 
   roleFAQ: [
-    { question: 'Where is the Production Office?', answer: 'The Production Office is on the third floor of the Clubhouse, in the same area as the Command Center. The Production Office handles admin, crew services, and radio distribution. The Command Center is separate and restricted to Core credential holders and public safety leadership.' },
+    { question: 'Where is the Production Office?', answer: 'The Production Office is in the Turf Lounge on the ground floor of the VIP Clubhouse, accessible through the Clubhouse Entrance. The Command Center is in the same room. The Production Office handles admin, crew services, and radio distribution. The Command Center is separate and restricted to Core credential holders and public safety leadership.' },
     { question: 'Where do I pick up my radio?', answer: 'Radios are distributed at the Production Office during check-in. Return your radio to the Production Office at the end of your shift or at strike. You are responsible for your assigned radio.' },
     { question: 'What\'s the Wi-Fi?', answer: 'Network: BCProduction · Password: coffeeBlack!! — Do not share with guests. This is a production network — not for streaming.' },
     { question: 'Is there craft services?', answer: 'No. This production does not offer craft services. Plan your own meals and snacks. Food vendors will be available on the north side of the footprint during show hours.' },

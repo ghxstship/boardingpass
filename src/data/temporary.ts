@@ -98,7 +98,7 @@ const temporary: GuideConfig = {
   contactDirectory: [
     { type: 'header', label: 'On-Site' },
     { type: 'entry', label: 'Production Gate', phone: 'E 32nd St', notes: 'Check-in point for all temporary access' },
-    { type: 'entry', label: 'Production Office', phone: 'Clubhouse 3F', notes: 'Escalation for delivery or access issues' },
+    { type: 'entry', label: 'Production Office', phone: 'Turf Lounge (Clubhouse GF)', notes: 'Escalation for delivery or access issues' },
     { type: 'header', label: 'Emergency' },
     { type: 'entry', label: 'Police / Fire / EMS', phone: '911', notes: 'Life-threatening emergencies' },
     { type: 'entry', label: 'Poison Control', phone: '1-800-222-1222', notes: '24/7 hotline' },

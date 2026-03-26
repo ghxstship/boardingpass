@@ -54,7 +54,7 @@ const talentIndustry: GuideConfig = {
   ],
 
   venueAmenities: [
-    'Green Room — Clubhouse 3F. Climate-controlled lounge with catering and beverages.',
+    'Green Room — Turf Lounge, ground floor of the VIP Clubhouse. Climate-controlled lounge with catering and beverages.',
     'VIP Access — Full access to the VIP Clubhouse and VIP Dance Floor with premium bars.',
     'Water Fountains — Located near most grandstand restrooms.',
     'Restrooms — Accessible in all VIP and backstage areas.',
@@ -106,7 +106,7 @@ const talentIndustry: GuideConfig = {
     {
       question: 'Where is the Green Room?',
       answer:
-        'The Green Room is on the third floor of the Clubhouse. Your Liaison will escort you. It\'s climate-controlled with catering and lounge seating.',
+        'The Green Room is in the Turf Lounge on the ground floor of the VIP Clubhouse, accessible through the Clubhouse Entrance. Your Liaison will escort you. It\'s climate-controlled with catering and lounge seating.',
     },
     {
       question: 'What\'s the Wi-Fi?',

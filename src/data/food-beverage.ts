@@ -162,7 +162,7 @@ const foodBeverage: GuideConfig = {
         'If the patient is unresponsive, begin CPR if trained. Locate the nearest AED.',
         'Production Manager notifies Executive Producer. Stage Manager assesses whether the show continues.',
       ],
-      note: 'AEDs are located at: Command Center (Clubhouse 3F), Production Office, GA Entrance gate, VIP Entrance, and Medical (north station).',
+      note: 'AEDs are located at: Command Center (Turf Lounge), Production Office, GA Entrance gate, VIP Entrance, and Medical (north station).',
     },
     {
       title: 'Structural Damage or Equipment Failure',
